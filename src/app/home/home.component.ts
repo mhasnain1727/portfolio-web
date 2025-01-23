@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Routes } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+
+  
+  constructor(  
+  ){}
+
+  ngOnInit(){}
+
+
+  toggleSidenav(sidenav: any) {
+    sidenav.toggle();
+  }
+  
 
 }

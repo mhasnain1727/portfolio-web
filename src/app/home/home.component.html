@@ -1,1 +1,47 @@
-<p>home works!</p>
+<mat-toolbar color="primary">
+    <!-- Left Logo -->
+    <img src="../../assets/icons/portfolio.png" alt="Logo" class="logo" />
+
+    <!-- Menu Icon for Mobile View -->
+    <button mat-icon-button class="mobile-menu-icon" (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <!-- Toolbar Title Spacer -->
+    <span class="flex-spacer"></span>
+
+    <!-- Right Menu Items for Larger Screens -->
+    <div class="menu-items">
+        <button mat-button routerLink="/home">Home</button>
+        <button mat-button routerLink="/projects">Projects</button>
+
+        <!-- About Menu with Hover -->
+        <button mat-button [matMenuTriggerFor]="aboutMenu" matTooltip="About Me">
+            About Me
+        </button>
+        <mat-menu #aboutMenu="matMenu" class="hover-menu">
+            <button mat-menu-item routerLink="/about-me/personal">Personal</button>
+            <button mat-menu-item routerLink="/about-me/qualification">Qualification</button>
+            <button mat-menu-item routerLink="/about-me/project">Project</button>
+        </mat-menu>
+
+        <button mat-button routerLink="/education">Education</button>
+        <button mat-button routerLink="/contact">Contact</button>
+    </div>
+</mat-toolbar>
+
+<!-- Sidenav for Mobile View -->
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="over" class="mobile-sidenav">
+        <button mat-button class="menu-item" routerLink="/home" (click)="sidenav.close()">Home</button>
+        <button mat-button class="menu-item" routerLink="/projects" (click)="sidenav.close()">Projects</button>
+        <button mat-button class="menu-item" [matMenuTriggerFor]="aboutMenu" (click)="sidenav.close()">About Me</button>
+        <mat-menu #aboutMenu="matMenu" class="hover-menu">
+            <button mat-menu-item routerLink="/about-me/personal">Personal</button>
+            <button mat-menu-item routerLink="/about-me/qualification">Qualification</button>
+            <button mat-menu-item routerLink="/about-me/project">Project</button>
+        </mat-menu>
+        <button mat-button class="menu-item" routerLink="/education" (click)="sidenav.close()">Education</button>
+        <button mat-button class="menu-item" routerLink="/contact" (click)="sidenav.close()">Contact</button>
+    </mat-sidenav>
+</mat-sidenav-container>

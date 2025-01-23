@@ -1,0 +1,80 @@
+/* Toolbar Styles */
+.logo {
+    height: 40px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  
+  .flex-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .menu-items {
+    display: flex;
+    gap: 16px;
+  }
+  
+  /* Mobile Menu Icon */
+  .mobile-menu-icon {
+    display: none;
+  }
+  
+  /* Sidenav Styles */
+  .sidenav-container {
+    height: 100%;
+  }
+  
+  .mobile-sidenav {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0;
+  }
+  
+  .menu-item {
+    text-align: left;
+    padding: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .menu-item:hover {
+    background-color: #1976d2; /* Primary hover color */
+    color: #fff;
+  }
+  
+  /* Hover Menu Styling */
+  .hover-menu {
+    padding: 0;
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hover-menu .mat-menu-item:hover {
+    background-color: #1976d2; /* Primary hover color */
+    color: #fff;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .menu-items {
+      display: none;
+    }
+  
+    .mobile-menu-icon {
+      display: block;
+    }
+  
+    .mobile-sidenav .menu-item {
+      display: block;
+      width: 100%;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    .mobile-sidenav .menu-item:hover {
+      background-color: #1976d2;
+      color: #fff;
+    }
+  }
+  
