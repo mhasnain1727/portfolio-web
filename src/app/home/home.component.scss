@@ -4,77 +4,180 @@
     width: auto;
     max-width: 100%;
     object-fit: contain;
-  }
-  
-  .flex-spacer {
+}
+
+.flex-spacer {
     flex: 1 1 auto;
-  }
-  
-  .menu-items {
+}
+
+.menu-items {
     display: flex;
     gap: 16px;
-  }
-  
-  /* Mobile Menu Icon */
-  .mobile-menu-icon {
+}
+
+.menu-items button:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Mobile Menu Icon */
+.mobile-menu-icon {
     display: none;
-  }
-  
-  /* Sidenav Styles */
-  .sidenav-container {
-    height: 100%;
-  }
-  
-  .mobile-sidenav {
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    padding: 16px 0;
-  }
-  
-  .menu-item {
+}
+
+
+/* Responsive Design */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-items {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+}
+
+
+/* Sidenav Styles */
+.sidenav-container {
+    position: fixed;
+    /* This makes the sidenav overlay on top of content */
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 0%;
+    /* Make the sidenav fill the entire viewport height */
+    z-index: 999;
+    /* Ensure the sidenav is on top of other content */
+}
+
+/* Mobile Sidenav */
+.mobile-sidenav {
+    position: absolute;
+    /* Keep it positioned over the content */
+    width: 90%;
+    top: 55px;
+    left: 0;
+    height: auto;
+    // padding: 10px;
+    gap: 10px;
+    /* Ensure it fills the entire height */
+    background: #f3f2f2;
+    /* Optional: background color */
+
+    // box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    /* Optional: adds a shadow effect */
+
+    transform: translateX(-100%);
+    /* Initially hidden off-screen */
+    transition: transform 0.3s ease;
+    /* Smooth transition for opening */
+}
+
+/* When the sidenav is open */
+.sidenav-container.open .mobile-sidenav {
+    transform: translateX(0);
+    /* Move the sidenav into view */
+}
+
+/* Menu Items for Mobile View */
+.mobile-sidenav .menu-item {
+    display: block;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
     text-align: left;
     padding: 16px;
-    transition: background-color 0.3s;
-  }
-  
-  .menu-item:hover {
-    background-color: #1976d2; /* Primary hover color */
-    color: #fff;
-  }
-  
-  /* Hover Menu Styling */
-  .hover-menu {
-    padding: 0;
+    font-size: 0.9rem;
+    color: #ffffff;
+    background: linear-gradient(to right, #3f51b5, #3f51b5);
+}
+
+
+/* Hover effect on mobile menu items */
+.mobile-sidenav .menu-item:hover {
     background: #ffffff;
-    border-radius: 4px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .hover-menu .mat-menu-item:hover {
-    background-color: #1976d2; /* Primary hover color */
+    color: black;
+}
+
+.nested-menu {
+    display: flex;
+    flex-direction: column;
+    padding-left: 16px;
+}
+
+.nested-menu-item {
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    padding: 15px;
+    background: linear-gradient(to right, #ffffff, #eae7e7);
+    // transition: background-color 0.3s;
+}
+
+.nested-menu-item:hover {
+    background: #3f51b5;
     color: #fff;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .menu-items {
-      display: none;
-    }
-  
-    .mobile-menu-icon {
-      display: block;
-    }
-  
-    .mobile-sidenav .menu-item {
-      display: block;
-      width: 100%;
-      border-bottom: 1px solid #ddd;
-    }
-  
-    .mobile-sidenav .menu-item:hover {
-      background-color: #1976d2;
-      color: #fff;
-    }
-  }
-  
+}
+
+
+
+/* Ensure the content behind the sidenav is dimmed or unaffected */
+.sidenav-container.open~.content {
+    filter: blur(4px);
+    /* Optionally blur content behind the sidenav */
+    transition: filter 0.3s ease;
+    /* Smooth transition for blur effect */
+}
+
+
+
+// ======================================================
+
+
+/* Basic Section Styling */
+.section {
+    padding: 50px;
+    margin: 30px 0;
+    border-radius: 8px;
+}
+
+.home-section {
+    background-color: #f0f8ff;
+}
+
+.projects-section {
+    background-color: #e6f7ff;
+}
+
+.personal-info-section {
+    background-color: #fff7e6;
+}
+
+.qualification-section {
+    background-color: #e6ffe6;
+}
+
+.education-section {
+    background-color: #ffecb3;
+}
+
+.contact-section {
+    background-color: #ffe6e6;
+}
+
+h2 {
+    color: #333;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+/* Smooth Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}

@@ -12,36 +12,88 @@
 
     <!-- Right Menu Items for Larger Screens -->
     <div class="menu-items">
-        <button mat-button routerLink="/home">Home</button>
-        <button mat-button routerLink="/projects">Projects</button>
+        <button mat-button (click)="scrollToSection('home')">Home</button>
+        <button mat-button (click)="scrollToSection('projects')">Projects</button>
 
         <!-- About Menu with Hover -->
         <button mat-button [matMenuTriggerFor]="aboutMenu" matTooltip="About Me">
             About Me
         </button>
         <mat-menu #aboutMenu="matMenu" class="hover-menu">
-            <button mat-menu-item routerLink="/about-me/personal">Personal</button>
-            <button mat-menu-item routerLink="/about-me/qualification">Qualification</button>
-            <button mat-menu-item routerLink="/about-me/project">Project</button>
+            <button mat-menu-item (click)="scrollToSection('personal-info')">Personal
+                Info</button>
+            <button mat-menu-item
+                (click)="scrollToSection('qualification')">Qualification</button>
         </mat-menu>
 
-        <button mat-button routerLink="/education">Education</button>
-        <button mat-button routerLink="/contact">Contact</button>
+        <button mat-button (click)="scrollToSection('education')">Resume</button>
+        <button mat-button (click)="scrollToSection('contact')">Contact</button>
     </div>
 </mat-toolbar>
 
 <!-- Sidenav for Mobile View -->
-<mat-sidenav-container class="sidenav-container">
+<!-- <mat-sidenav-container class="sidenav-container"> -->
     <mat-sidenav #sidenav mode="over" class="mobile-sidenav">
-        <button mat-button class="menu-item" routerLink="/home" (click)="sidenav.close()">Home</button>
-        <button mat-button class="menu-item" routerLink="/projects" (click)="sidenav.close()">Projects</button>
-        <button mat-button class="menu-item" [matMenuTriggerFor]="aboutMenu" (click)="sidenav.close()">About Me</button>
-        <mat-menu #aboutMenu="matMenu" class="hover-menu">
-            <button mat-menu-item routerLink="/about-me/personal">Personal</button>
-            <button mat-menu-item routerLink="/about-me/qualification">Qualification</button>
-            <button mat-menu-item routerLink="/about-me/project">Project</button>
-        </mat-menu>
-        <button mat-button class="menu-item" routerLink="/education" (click)="sidenav.close()">Education</button>
-        <button mat-button class="menu-item" routerLink="/contact" (click)="sidenav.close()">Contact</button>
+        <button mat-button class="menu-item"
+            (click)="sidenav.close(); scrollToSection('home')">Home</button>
+        <button mat-button class="menu-item"
+            (click)="sidenav.close(); scrollToSection('projects')">Projects</button>
+
+        <!-- About Menu Nested List -->
+        <button mat-button class="menu-item" (click)="toggleAboutSubmenu(); scrollToSection('about-me')">About
+            Me</button>
+        <div *ngIf="aboutSubmenuOpen" class="nested-menu">
+            <button mat-button class="nested-menu-item"
+                (click)="sidenav.close(); scrollToSection('personal-info')">Personal</button>
+            <button mat-button class="nested-menu-item"
+                (click)="sidenav.close(); scrollToSection('qualification')">Qualification</button>
+            <button mat-button class="nested-menu-item"
+                (click)="sidenav.close(); scrollToSection('project')">Project</button>
+        </div>
+
+        <button mat-button class="menu-item"
+            (click)="sidenav.close(); scrollToSection('education')">Education</button>
+        <button mat-button class="menu-item"
+            (click)="sidenav.close(); scrollToSection('contact')">Contact</button>
     </mat-sidenav>
-</mat-sidenav-container>
+<!-- </mat-sidenav-container> -->
+
+<!-- Sections -->
+<section id="home" class="section home-section">
+    <h2>Home</h2>
+    <p>Welcome to my portfolio!</p>
+</section>
+
+<section id="projects" class="section projects-section">
+    <h2>Projects</h2>
+    <p>Here are some of the projects I’ve worked on:</p>
+    <ul>
+        <li>Project 1</li>
+        <li>Project 2</li>
+        <li>Project 3</li>
+    </ul>
+</section>
+
+<section id="personal-info" class="section personal-info-section">
+    <h2>Personal Info</h2>
+    <p>Name: John Doe</p>
+    <p>Age: 30</p>
+    <img src="path-to-image.jpg" alt="Profile Picture" class="profile-image" />
+</section>
+
+<section id="qualification" class="section qualification-section">
+    <h2>Qualifications</h2>
+    <p>Degree: Bachelors in Computer Science</p>
+    <p>University: XYZ University</p>
+</section>
+
+<section id="education" class="section education-section">
+    <h2>Education</h2>
+    <p>Additional educational details will be added here.</p>
+</section>
+
+<section id="contact" class="section contact-section">
+    <h2>Contact</h2>
+    <p>Email: john.doe</p>
+    <p>Phone: 123-456-7890</p>
+</section>

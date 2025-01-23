@@ -8,15 +8,23 @@ import { Routes } from '@angular/router';
 })
 export class HomeComponent {
 
-  
+  aboutSubmenuOpen = false;
+
   constructor(  
   ){}
 
   ngOnInit(){}
 
+  // Scroll to the section based on the section ID
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
-  toggleSidenav(sidenav: any) {
-    sidenav.toggle();
+  toggleAboutSubmenu(): void {
+    this.aboutSubmenuOpen = !this.aboutSubmenuOpen;
   }
   
 
