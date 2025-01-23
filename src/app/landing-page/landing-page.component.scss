@@ -1,44 +1,62 @@
-.body-container {
-    background: linear-gradient(to bottom, black, transparent);
+// .body-container{
+//     width: 100vw;
+//     height: 100vh;
+//     background: linear-gradient(to bottom, rgb(1, 1, 9), black);
+// }
+
+.background-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
     height: 100vh;
+    background: url('../../assets/globe.gif') no-repeat center center/cover;
 }
 
-.body-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    padding: 20px;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
-.globe-container {
-    width: 100%;
+.overlay-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.overlay-content p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.overlay-content .description {
+    margin-top: 20px;
     max-width: 600px;
-    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1rem;
 }
 
-.content {
-    max-width: 600px;
-}
-
-.portfolio-button {
+.overlay-content button {
+    margin-top: 30px;
+    padding: 10px 20px;
     background-color: #007bff;
     color: white;
-    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1rem;
 }
 
-.portfolio-button:hover {
+.overlay-content button:hover {
     background-color: #0056b3;
-    transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
-    .globe-container iframe {
-        width: 100%;
-        height: auto;
-    }
+.name-text {
+    margin-bottom: 30vh;
 }
