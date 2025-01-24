@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Routes } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +11,7 @@ export class HomeComponent {
   aboutSubmenuOpen = false;
 
   constructor(  
+    private router: Router
   ){}
 
   ngOnInit(){}
@@ -27,5 +28,8 @@ export class HomeComponent {
     this.aboutSubmenuOpen = !this.aboutSubmenuOpen;
   }
   
+  onClickHome(){
+    this.router.navigate(['/info']);
+  }
 
 }

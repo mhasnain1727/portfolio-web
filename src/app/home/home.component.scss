@@ -13,6 +13,10 @@
 .menu-items {
     display: flex;
     gap: 16px;
+
+    button {
+        font-size: 1.0rem;
+    }
 }
 
 .menu-items button:hover {
@@ -56,7 +60,7 @@
 .mobile-sidenav {
     position: absolute;
     /* Keep it positioned over the content */
-    width: 90%;
+    width: 60%;
     top: 55px;
     left: 0;
     height: auto;

@@ -5,9 +5,10 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
 const routes: Routes = [
-  { path: '', component: LandingPageComponent },
+  { path: 'info', component: LandingPageComponent },
   { path: 'home', component: HomeComponent },
-  { path: '**', redirectTo: '', pathMatch: 'full' }
+  { path: '', redirectTo: 'info', pathMatch: 'full' },
+  { path: '**', redirectTo: 'info', pathMatch: 'full' }
 ];
 
 @NgModule({
