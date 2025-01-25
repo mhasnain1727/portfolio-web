@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="sticky" color="primary">
     <!-- Left Logo -->
     <!-- <img src="../../assets/icons/portfolio.png" alt="Logo" class="logo" /> -->
     <!-- <img src="../../assets/icons/home_.png" alt="Logo" class="logo" /> -->
@@ -24,8 +24,7 @@
         <mat-menu #aboutMenu="matMenu" class="hover-menu">
             <button mat-menu-item (click)="scrollToSection('personal-info')">Personal
                 Info</button>
-            <button mat-menu-item
-                (click)="scrollToSection('qualification')">Qualification</button>
+            <button mat-menu-item (click)="scrollToSection('qualification')">Qualification</button>
         </mat-menu>
 
         <button mat-button (click)="scrollToSection('education')">Resume</button>
@@ -35,38 +34,63 @@
 
 <!-- Sidenav for Mobile View -->
 <!-- <mat-sidenav-container class="sidenav-container"> -->
-    <mat-sidenav #sidenav mode="over" class="mobile-sidenav">
-        <button mat-button class="menu-item"
-            (click)="sidenav.close(); scrollToSection('home')">Home</button>
-        <button mat-button class="menu-item"
-            (click)="sidenav.close(); scrollToSection('projects')">Projects</button>
+<mat-sidenav #sidenav mode="over" class="mobile-sidenav">
+    <button mat-button class="menu-item" (click)="sidenav.close(); scrollToSection('home')">Home</button>
+    <button mat-button class="menu-item" (click)="sidenav.close(); scrollToSection('projects')">Projects</button>
 
-        <!-- About Menu Nested List -->
-        <button mat-button class="menu-item" (click)="toggleAboutSubmenu(); scrollToSection('about-me')">About
-            Me</button>
-        <div *ngIf="aboutSubmenuOpen" class="nested-menu">
-            <button mat-button class="nested-menu-item"
-                (click)="sidenav.close(); scrollToSection('personal-info')">Personal</button>
-            <button mat-button class="nested-menu-item"
-                (click)="sidenav.close(); scrollToSection('qualification')">Qualification</button>
-            <button mat-button class="nested-menu-item"
-                (click)="sidenav.close(); scrollToSection('project')">Project</button>
-        </div>
+    <!-- About Menu Nested List -->
+    <button mat-button class="menu-item" (click)="toggleAboutSubmenu(); scrollToSection('about-me')">About
+        Me</button>
+    <div *ngIf="aboutSubmenuOpen" class="nested-menu">
+        <button mat-button class="nested-menu-item"
+            (click)="sidenav.close(); scrollToSection('personal-info')">Personal</button>
+        <button mat-button class="nested-menu-item"
+            (click)="sidenav.close(); scrollToSection('qualification')">Qualification</button>
+        <button mat-button class="nested-menu-item"
+            (click)="sidenav.close(); scrollToSection('project')">Project</button>
+    </div>
 
-        <button mat-button class="menu-item"
-            (click)="sidenav.close(); scrollToSection('education')">Education</button>
-        <button mat-button class="menu-item"
-            (click)="sidenav.close(); scrollToSection('contact')">Contact</button>
-    </mat-sidenav>
+    <button mat-button class="menu-item" (click)="sidenav.close(); scrollToSection('education')">Education</button>
+    <button mat-button class="menu-item" (click)="sidenav.close(); scrollToSection('contact')">Contact</button>
+</mat-sidenav>
 <!-- </mat-sidenav-container> -->
 
 <!-- Sections -->
 <section id="home" class="section home-section">
-    <div class="home-section-animation">
-        <h2>Home</h2>
-        <p>Welcome to my portfolio!</p>
+    <div class="intro-text">
+        <p class="salutation">Hi there!, I'm</p>
+        <p class="name">Mohammad Hasnain</p>
+        <p class="designation">(Software Engineer)  </p>
+
+        <div class="spacer"></div>
+
+        <p class="black">
+            ⚡ Full Stack Developer (MEAN, Ionic, and .NET)
+        </p>
+        <p class="black">
+            ⚡ Currently working as a Senior Software Engineer at <a href="https://peopletech.com/" target="_blank" style="color: red;">
+                 PeopleTech Group Pvt. Ltd.
+            </a>
+        </p>
+
+        <div class="contact-icons">
+            <a href="https://www.linkedin.com/in/mhasnain1727/" target="_blank">
+                <mat-icon class="icon">linkedin</mat-icon>
+            </a>
+            <a href="mailto:mhasnain1727@gmail.com">
+                <mat-icon class="icon">email</mat-icon>
+            </a>
+        </div>
     </div>
 </section>
+
+<section id="personal-info" class="section personal-info-section">
+    <h2>Personal Info</h2>
+    <p>Name: John Doe</p>
+    <p>Age: 30</p>
+    <img src="path-to-image.jpg" alt="Profile Picture" class="profile-image" />
+</section>
+
 
 <section id="projects" class="section projects-section">
     <h2>Projects</h2>
@@ -76,13 +100,6 @@
         <li>Project 2</li>
         <li>Project 3</li>
     </ul>
-</section>
-
-<section id="personal-info" class="section personal-info-section">
-    <h2>Personal Info</h2>
-    <p>Name: John Doe</p>
-    <p>Age: 30</p>
-    <img src="path-to-image.jpg" alt="Profile Picture" class="profile-image" />
 </section>
 
 <section id="qualification" class="section qualification-section">

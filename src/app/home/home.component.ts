@@ -4,6 +4,9 @@ import * as THREE from 'three';
 import WAVES from 'vanta/dist/vanta.waves.min';
 import GLOBE from 'vanta/dist/vanta.globe.min';
 import NET from 'vanta/dist/vanta.net.min';
+import TOPOLOGY from 'vanta/dist/vanta.topology.min';
+import FOG from 'vanta/dist/vanta.fog.min';
+
 
 @Component({
   selector: 'app-home',
@@ -45,19 +48,50 @@ export class HomeComponent {
     // });
 
 
-    this.vantaEffect = NET({
+    // this.vantaEffect = NET({
+    //   el: this.elementRef.nativeElement.querySelector('.home-section'),
+    //   mouseControls: true,
+    //   touchControls: true,
+    //   gyroControls: false,
+    //   minHeight: 200.0,
+    //   minWidth: 200.0,
+    //   scale: 1.0,
+    //   scaleMobile: 1.0,
+    //   color: 0x3fbeff,
+    //   // backgroundColor: 0xffffff,
+    //   // backgroundColor: 0x3f51b5,
+    //   THREE
+    // });
+
+    // this.vantaEffect = TOPOLOGY({
+    //   el: this.elementRef.nativeElement.querySelector('.home-section'),
+    //   mouseControls: false,
+    //   touchControls: true,
+    //   gyroControls: false,
+    //   minHeight: 100.00,
+    //   minWidth: 100.00,
+    //   scale: 1.00,
+    //   scaleMobile: 1.00,
+    //   color: 0x295fd4,
+    //   backgroundColor: 0x31a1a,
+    //   THREE,
+    // });
+
+    this.vantaEffect = FOG({
       el: this.elementRef.nativeElement.querySelector('.home-section'),
       mouseControls: true,
       touchControls: true,
       gyroControls: false,
-      minHeight: 200.0,
-      minWidth: 200.0,
-      scale: 1.0,
-      scaleMobile: 1.0,
-      color: 0x3fbeff,
-      // backgroundColor: 0xffffff,
-      // backgroundColor: 0x3f51b5,
-      THREE
+      minHeight: 200.00,
+      minWidth: 200.00,
+      highlightColor: 0xffffff,
+      midtoneColor: 0xa4d2ed,
+      lowlightColor: 0xa68cf,
+      baseColor: 0xffffff,
+      blurFactor: 0.22,
+      speed: 0.80,
+      zoom: 2.40,
+      THREE,
     });
 
 

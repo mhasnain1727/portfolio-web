@@ -1,4 +1,10 @@
-/* Toolbar Styles */
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
 .logo {
     height: 40px;
     width: auto;
@@ -143,13 +149,13 @@
 /* Basic Section Styling */
 .section {
     padding: 50px;
-    margin: 30px 0;
+    // margin: 30px 0;
     border-radius: 8px;
 }
 
 .home-section {
     width: 100%;
-    height: 100vh;
+    height: auto;
     position: relative;
     overflow: hidden;
     background-color: #f0f8ff;
@@ -158,12 +164,80 @@
 
 }
 
-.projects-section {
-    background-color: #e6f7ff;
+.intro-text {
+    margin-top: 20px;
+
+    .salutation {
+        color: #00008b;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .name {
+        font-size: 3rem;
+        font-weight: bold;
+        padding-top: 10px;
+        margin-top: 30px;
+        line-height: 1.0;
+    }
+
+    .designation {
+        font-weight: 500;
+        font-size: 1.5rem;
+        margin-top: 10px;
+    }
+
+
+    .black {
+        color: #000;
+        /* Black color */
+        font-size: 1rem;
+        margin: 5px 0;
+    }
+
+    .spacer {
+        height: 20px;
+        /* Space between sections */
+    }
+
+
+    .contact-icons {
+        display: inline-flex;
+        margin-top: 20px;
+        width: 100vh;
+    }
+
+    .contact-icons a {
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    .contact-icons .icon {
+        // font-size: 30px;
+        color: #00008b;
+        transition: color 0.3s;
+    }
+
+    .contact-icons .icon:hover {
+        color: #ff5722;
+    }
 }
 
+
+
 .personal-info-section {
-    background-color: #fff7e6;
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+    margin: 0px !important;
+    border-radius: 0px;
+
+}
+
+.projects-section {
+    background-color: #e6f7ff;
 }
 
 .qualification-section {
