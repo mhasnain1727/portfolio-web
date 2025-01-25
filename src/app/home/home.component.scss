@@ -1,6 +1,6 @@
 .sticky {
     position: -webkit-sticky;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1000;
 }
@@ -73,7 +73,7 @@
     // padding: 10px;
     gap: 10px;
     /* Ensure it fills the entire height */
-    background: #f3f2f2;
+    // background: #f3f2f2;
     /* Optional: background color */
 
     // box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
@@ -82,7 +82,9 @@
     transform: translateX(-100%);
     /* Initially hidden off-screen */
     transition: transform 0.3s ease;
+    background-color: #3f51b5;
     /* Smooth transition for opening */
+    z-index: 100;
 }
 
 /* When the sidenav is open */
@@ -100,15 +102,18 @@
     text-align: left;
     padding: 16px;
     font-size: 0.9rem;
-    color: #ffffff;
-    background: linear-gradient(to right, #3f51b5, #3f51b5);
+    color: #3f51b5;
+    font-weight: 500;
+    // background-color: #ffffff;
+    background: linear-gradient(to right, #ffffff, #ffffff);
+    z-index: 100;
 }
 
 
 /* Hover effect on mobile menu items */
 .mobile-sidenav .menu-item:hover {
-    background: #ffffff;
-    color: black;
+    background: #3f51b5;
+    color: #ffffff;
 }
 
 .nested-menu {
@@ -158,7 +163,7 @@
     height: auto;
     position: relative;
     overflow: hidden;
-    background-color: #f0f8ff;
+    // background-color: #f0f8ff;
     margin: 0px !important;
     border-radius: 0px;
 
@@ -168,7 +173,7 @@
     margin-top: 20px;
 
     .salutation {
-        color: #00008b;
+        color: #000;
         font-size: 2rem;
         font-weight: bold;
     }
@@ -179,17 +184,19 @@
         padding-top: 10px;
         margin-top: 30px;
         line-height: 1.0;
+        color: #ffffff
     }
 
     .designation {
         font-weight: 500;
         font-size: 1.5rem;
         margin-top: 10px;
+        color: #ffffff
     }
 
 
     .black {
-        color: #000;
+        color: #ffffff;
         /* Black color */
         font-size: 1rem;
         margin: 5px 0;
@@ -214,7 +221,8 @@
 
     .contact-icons .icon {
         // font-size: 30px;
-        color: #00008b;
+        // color: #00008b;
+        color: yellow;
         transition: color 0.3s;
     }
 
@@ -224,17 +232,103 @@
 }
 
 
+// ====================================================
+
+// personal info section start 
+
+// .personal-info-section {
+//     width: 100%;
+//     height: auto;
+//     position: relative;
+//     overflow: hidden;
+//     background-color: #ffffff;
+//     margin: 0px !important;
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+//     border-radius: 0px;
+//     padding: 20px;
+// }
 
 .personal-info-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
     width: 100%;
-    height: auto;
-    position: relative;
-    overflow: hidden;
-    background-color: #ffffff;
-    margin: 0px !important;
-    border-radius: 0px;
-
+    min-height: 350px;
+    /* Light background */
 }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Ensures responsiveness */
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    gap: 20px;
+}
+
+/* Left Section: About Me */
+.about-me {
+    flex: 1;
+    min-width: 300px;
+    /* Ensures it doesn't shrink too much */
+}
+
+.about-me h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #00008b;
+    /* Dark blue color */
+}
+
+.about-me p {
+    font-size: 1.1rem;
+    color: #333;
+    /* Dark gray text */
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Right Section: Profile Image */
+.profile-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+    /* Ensures it doesn't shrink too much */
+}
+
+.profile-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Makes the image round */
+    border: 5px solid #00008b;
+    /* Optional border for styling */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        /* Stack the sections vertically */
+        text-align: center;
+    }
+
+    .about-me {
+        margin-bottom: 20px;
+        /* Adds spacing between sections */
+    }
+}
+
+
+// personal info section end 
 
 .projects-section {
     background-color: #e6f7ff;

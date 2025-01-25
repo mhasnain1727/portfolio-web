@@ -48,20 +48,20 @@ export class HomeComponent {
     // });
 
 
-    // this.vantaEffect = NET({
-    //   el: this.elementRef.nativeElement.querySelector('.home-section'),
-    //   mouseControls: true,
-    //   touchControls: true,
-    //   gyroControls: false,
-    //   minHeight: 200.0,
-    //   minWidth: 200.0,
-    //   scale: 1.0,
-    //   scaleMobile: 1.0,
-    //   color: 0x3fbeff,
-    //   // backgroundColor: 0xffffff,
-    //   // backgroundColor: 0x3f51b5,
-    //   THREE
-    // });
+    this.vantaEffect = NET({
+      el: this.elementRef.nativeElement.querySelector('.home-section'),
+      mouseControls: false,
+      touchControls: false,
+      gyroControls: false,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: 0x3fbeff,
+      // backgroundColor: 0xffffff,
+      backgroundColor: 0x3f51b5,
+      THREE
+    });
 
     // this.vantaEffect = TOPOLOGY({
     //   el: this.elementRef.nativeElement.querySelector('.home-section'),
@@ -77,22 +77,22 @@ export class HomeComponent {
     //   THREE,
     // });
 
-    this.vantaEffect = FOG({
-      el: this.elementRef.nativeElement.querySelector('.home-section'),
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      highlightColor: 0xffffff,
-      midtoneColor: 0xa4d2ed,
-      lowlightColor: 0xa68cf,
-      baseColor: 0xffffff,
-      blurFactor: 0.22,
-      speed: 0.80,
-      zoom: 2.40,
-      THREE,
-    });
+    // this.vantaEffect = FOG({
+    //   el: this.elementRef.nativeElement.querySelector('.home-section'),
+    //   mouseControls: true,
+    //   touchControls: true,
+    //   gyroControls: false,
+    //   minHeight: 200.00,
+    //   minWidth: 200.00,
+    //   highlightColor: 0xffffff,
+    //   midtoneColor: 0xa4d2ed,
+    //   lowlightColor: 0xa68cf,
+    //   baseColor: 0xffffff,
+    //   blurFactor: 0.22,
+    //   speed: 1.80,
+    //   zoom: 1.40,
+    //   THREE,
+    // });
 
 
 
@@ -125,7 +125,10 @@ export class HomeComponent {
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ 
+        block: "start",
+        behavior: 'smooth' 
+      });
     }
   }
 
