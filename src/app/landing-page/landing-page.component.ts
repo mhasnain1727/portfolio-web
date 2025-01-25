@@ -49,6 +49,7 @@ export class LandingPageComponent {
       points: 20.0, // increase the number of connecting points
       maxDistance: 5.0, // increase the maximum distance for connections
       spacing: 10.0, // decrease the spacing between points
+      size: 0.8,
       THREE,
     });
   }

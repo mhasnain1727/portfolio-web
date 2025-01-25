@@ -23,7 +23,7 @@
 }
 
 .overlay-content {
-    // background: rgba(1, 0, 0, 0.6);
+    background: rgba(53, 53, 53, 0.6);
     // background: #ffffff;
     /* Semi-transparent overlay */
     padding: 20px;
@@ -48,6 +48,7 @@
 }
 
 .description {
+    line-height: 1.4;
     font-size: 1.2rem;
     margin: 15px 0;
 }
