@@ -95,7 +95,7 @@
                 I thrive on creating scalable, efficient, and user-friendly applications.
             </p>
             <p>
-                Currently, I’m working as a Senior Software Engineer at PeopleTech Group Pvt. Ltd., where I’m
+                Currently, I’m working as a <span style="color: rgb(158, 158, 2); font-weight: bold;"> Senior Software Engineer at PeopleTech Group Pvt. Ltd.</span>, where I’m
                 responsible for
                 designing and developing innovative software solutions.
             </p>
@@ -111,28 +111,105 @@
 
 
 <section id="projects" class="section projects-section">
-    <h2>Projects</h2>
-    <p>Here are some of the projects I’ve worked on:</p>
-    <ul>
-        <li>Project 1</li>
-        <li>Project 2</li>
-        <li>Project 3</li>
-    </ul>
+    <div class="container">
+        <div class="section-title">
+            <p>Projects</p>
+        </div>
+    </div>
 </section>
 
-<section id="qualification" class="section qualification-section">
+<!-- <section id="qualification" class="section qualification-section">
     <h2>Qualifications</h2>
     <p>Degree: Bachelors in Computer Science</p>
     <p>University: XYZ University</p>
-</section>
+</section> -->
 
 <section id="education" class="section education-section">
-    <h2>Education</h2>
-    <p>Additional educational details will be added here.</p>
+    <div class="container">
+        <div class="section-title">
+            <p>Education</p>
+        </div>
+        <div class="section-content">
+
+        </div>
+    </div>
+    <h2></h2>
 </section>
 
 <section id="contact" class="section contact-section">
-    <h2>Contact</h2>
-    <p>Email: john.doe</p>
-    <p>Phone: 123-456-7890</p>
+    <div class="container">
+        <div class="section-title">
+            <p>Contact Me</p>
+        </div>
+        <div class="section-subtitle">
+            <p>I'm currently specializing in &nbsp; <span style="color: yellow;">Front-end Development (Angular)</span>.
+            </p>
+            <p>Feel free to get in touch for collaborations and talk more about your projects.</p>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="contact-details">
+            <!-- Email -->
+            <div class="contact-item">
+                <button mat-fab extended matTooltip="Email" (click)="openLinks('mailto:mhasnain1727@gmail.com')">
+                    <mat-icon>email</mat-icon>
+                    mhasnain1727&#64;gmail.com
+                </button>
+            </div>
+            <div class="contact-item">
+                <button mat-fab extended matTooltip="Mobile No" (click)="openLinks('tel:+919058691727')">
+                    <mat-icon>phone</mat-icon>
+                    +91 90586 91727
+                </button>
+            </div>
+
+            <!-- Location -->
+            <div class="contact-item">
+                <button mat-fab extended matTooltip="Address">
+                    <mat-icon>location_on</mat-icon>
+                    Aligarh, (U.P.), India.
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Social Media -->
+        <div class="social-links">
+            <div class="contact-item">
+                <button mat-fab extended matTooltip="GitHub"
+                    (click)="openExternalLink('https://github.com/mhasnain1727')">
+                    <mat-icon>code</mat-icon>
+                    GitHub
+                </button>
+            </div>
+
+            <div class="contact-item">
+                <button mat-fab extended matTooltip="LinkedIn"
+                    (click)="openExternalLink('https://linkedin.com/in/mhasnain1727')">
+                    <mat-icon>linkedin</mat-icon>
+                    LinkedIn
+                </button>
+            </div>
+
+            <div class="contact-item">
+                <button mat-fab extended matTooltip="Portfolio"
+                    (click)="openExternalLink('https://hasnain-info.onrender.com')">
+                    <mat-icon>web</mat-icon>
+                    Portfolio
+                </button>
+            </div>
+        </div>
+    </div>
+
+
 </section>
+
+
+<footer class="footer">
+    <div class="footer-content">
+        <p>Designed and Developed by Mohammad Hasnain.</p>
+    </div>
+    <div class="footer-content-2">
+        <p>Built with Angular & Material UI. Hosted on Render.</p>
+    </div>
+</footer>

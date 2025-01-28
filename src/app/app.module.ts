@@ -11,6 +11,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -27,7 +31,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatIconModule,
     MatMenuModule,
     MatButtonModule,
-    MatSidenavModule
+    MatSidenavModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatFormFieldModule,
+    MatSnackBarModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

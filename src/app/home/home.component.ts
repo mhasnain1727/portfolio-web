@@ -6,6 +6,7 @@ import GLOBE from 'vanta/dist/vanta.globe.min';
 import NET from 'vanta/dist/vanta.net.min';
 import TOPOLOGY from 'vanta/dist/vanta.topology.min';
 import FOG from 'vanta/dist/vanta.fog.min';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -18,13 +19,29 @@ export class HomeComponent {
   aboutSubmenuOpen = false;
 
   private vantaEffect: any;
+  public contactForm: FormGroup;
 
   constructor(
     private elementRef: ElementRef,
-    private router: Router
-  ) { }
+    private router: Router,
+    private fb: FormBuilder
+  ) {
+    this.contactForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', Validators.required],
+    });
+  }
 
   ngOnInit() { }
+
+  onSubmit() {
+    if (this.contactForm.valid) {
+      console.log('Form Data:', this.contactForm.value);
+      alert('Message sent successfully!');
+      this.contactForm.reset();
+    }
+  }
 
   ngAfterViewInit(): void {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -125,9 +142,9 @@ export class HomeComponent {
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ 
+      element.scrollIntoView({
         block: "start",
-        behavior: 'smooth' 
+        behavior: 'smooth'
       });
     }
   }
@@ -140,4 +157,12 @@ export class HomeComponent {
     this.router.navigate(['/info']);
   }
 
+  openExternalLink(url: string): void {
+    window.open(url, '_blank');
+  }
+
+  openLinks(url: string): void {
+    window.open(url);
+  }
 }
+

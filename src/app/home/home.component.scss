@@ -277,15 +277,16 @@
 }
 
 .about-me h2 {
-    font-size: 2rem;
     margin-bottom: 10px;
     color: #00008b;
-    /* Dark blue color */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    font-weight: 550;
 }
 
 .about-me p {
     font-size: 1.1rem;
-    color: #333;
+    color: #000;
     /* Dark gray text */
     line-height: 1.6;
     margin-bottom: 15px;
@@ -359,4 +360,203 @@ h2 {
 /* Smooth Scroll Behavior */
 html {
     scroll-behavior: smooth;
+}
+
+
+// project section start
+.projects-section {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 20px;
+    background-color: #000;
+    border-radius: 0px;
+    // background: linear-gradient(to bottom, #3f51b5, #ffffff, #00008b);
+    width: 100%;
+    min-height: 350px;
+    /* Light background */
+
+    .container {
+        margin: 0px !important;
+        padding: 0px !important;
+
+        .section-title {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            width: 100%;
+            height: auto;
+            background: linear-gradient(to bottom, #3f51b5, #ffffff, #00008b);
+            padding: 10px 0px 10px 0px;
+
+            p {
+                padding-top: 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 2rem;
+                color: #000;
+                font-weight: 550;
+            }
+        }
+    }
+}
+
+// project section end
+
+
+// education section start
+.education-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 0px;
+    background-image: url('../../assets/education-watermark.jpg');
+    // opacity: 0.3;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 400px;
+
+    .container {
+        .section-title {
+            display: flex;
+            // justify-content: center;
+            flex-wrap: wrap;
+            align-items: start;
+            width: 100%;
+
+            p {
+                // font-family: Arial, Helvetica, sans-serif;
+                font-size: 2rem;
+                color: black;
+                font-weight: 550;
+                opacity: 1.3;
+            }
+        }
+
+        .section-subtitle {}
+    }
+}
+
+// education section end
+
+
+
+// conatct section start
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 0px;
+    background: linear-gradient(to bottom, black, black, white);
+    width: 100%;
+    min-height: 350px;
+    /* Light background */
+
+    .container {
+        .section-title {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            width: 100%;
+
+            p {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 2rem;
+                color: #ffffff;
+                font-weight: 550;
+            }
+        }
+
+        .section-subtitle {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            width: 100%;
+            margin-top: 25px;
+
+            p {
+                display: flex;
+                justify-content: center;
+                font-size: 1.3rem;
+                // color: #00008b;
+                color: #ffffff;
+                font-weight: 500;
+                width: 100%;
+                line-height: 1.2;
+                margin-bottom: 10px;
+            }
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 20px;
+
+            .contact-item {
+                button {
+                    font-size: 1rem;
+                    background-color: #ffffff;
+                    color: black
+                }
+            }
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 20px;
+
+            .contact-item {
+                button {
+                    font-size: 1rem;
+                    background-color: #6bc1f6;
+                    color: black
+                }
+            }
+        }
+    }
+}
+
+
+
+// conatct section end
+
+
+.footer {
+    width: 100%;
+    background-color: #000;
+
+    .footer-content {
+        display: flex;
+        justify-content: center;
+
+        p {
+            margin-top: 10px;
+            font-weight: 550;
+            font-size: 1rem;
+            color: #ffffff;
+        }
+    }
+
+    .footer-content-2 {
+        display: flex;
+        justify-content: center;
+
+        p {
+            font-size: 0.8rem;
+            color: #ffffff;
+        }
+    }
 }
