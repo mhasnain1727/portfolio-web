@@ -367,7 +367,7 @@ html {
 .projects-section {
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     padding: 20px;
     background-color: #000;
     border-radius: 0px;
@@ -425,7 +425,7 @@ html {
             display: flex;
             // justify-content: center;
             flex-wrap: wrap;
-            align-items: start;
+            align-items: flex-start;
             width: 100%;
 
             p {
