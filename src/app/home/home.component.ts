@@ -6,6 +6,8 @@ import GLOBE from 'vanta/dist/vanta.globe.min';
 import NET from 'vanta/dist/vanta.net.min';
 import TOPOLOGY from 'vanta/dist/vanta.topology.min';
 import FOG from 'vanta/dist/vanta.fog.min';
+import DOTS from 'vanta/dist/vanta.dots.min';
+import CLOUDS from 'vanta/dist/vanta.clouds.min';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
@@ -19,6 +21,7 @@ export class HomeComponent {
   aboutSubmenuOpen = false;
 
   private vantaEffect: any;
+  private vantaEffect1: any;
   public contactForm: FormGroup;
 
   constructor(
@@ -47,20 +50,19 @@ export class HomeComponent {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
     // this.vantaEffect = WAVES({
-    //   el: this.elementRef.nativeElement.querySelector('.home-section'),
+    //   el: this.elementRef.nativeElement.querySelector('.education-section'),
     //   mouseControls: true,
     //   touchControls: true,
     //   gyroControls: false,
-    //   minHeight: 100.0,
-    //   minWidth: 100.0,
-    //   scale: 1.0,
-    //   scaleMobile: 1.0,
-    //   shininess: 29.0,
-    //   waveHeight: 12.5,
-    //   waveSpeed: 0.55,
-    //   zoom: 0.76,
-    //   color: 0x3fbeff,
-    //   backgroundColor: 0x000000,
+    //   minHeight: 200.00,
+    //   minWidth: 200.00,
+    //   scale: 1.00,
+    //   scaleMobile: 1.00,
+    //   color: 0x314051,
+    //   shininess: 0.00,
+    //   waveHeight: 3.00,
+    //   waveSpeed: 1.15,
+    //   zoom: 0.79,    
     //   THREE
     // });
 
@@ -77,6 +79,32 @@ export class HomeComponent {
       color: 0x3fbeff,
       // backgroundColor: 0xffffff,
       backgroundColor: 0x3f51b5,
+      THREE
+    });
+
+    this.vantaEffect1 = DOTS({
+      el: this.elementRef.nativeElement.querySelector('.projects-section'),
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      THREE
+    });
+
+    this.vantaEffect1 = CLOUDS({
+      el: this.elementRef.nativeElement.querySelector('.contact-section'),
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      skyColor: 0x111212,
+      cloudColor: 0x1f2121,
+      cloudShadowColor: 0x0,
+      speed: 0.50,
       THREE
     });
 
@@ -135,6 +163,9 @@ export class HomeComponent {
   ngOnDestroy(): void {
     if (this.vantaEffect) {
       this.vantaEffect.destroy();
+    }
+    if (this.vantaEffect1) {
+      this.vantaEffect1.destroy();
     }
   }
 

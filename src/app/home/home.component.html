@@ -22,9 +22,9 @@
             About Me
         </button>
         <mat-menu #aboutMenu="matMenu" class="hover-menu">
-            <button mat-menu-item (click)="scrollToSection('personal-info')">Personal
+            <button mat-menu-item (click)="scrollToSection('personal-info')">Info
                 Info</button>
-            <button mat-menu-item (click)="scrollToSection('qualification')">Qualification</button>
+            <button mat-menu-item (click)="scrollToSection('education')">Education</button>
         </mat-menu>
 
         <button mat-button (click)="scrollToSection('education')">Resume</button>
@@ -43,19 +43,20 @@
         Me</button>
     <div *ngIf="aboutSubmenuOpen" class="nested-menu">
         <button mat-button class="nested-menu-item"
-            (click)="sidenav.close(); scrollToSection('personal-info')">Personal</button>
+            (click)="sidenav.close(); scrollToSection('personal-info')">Info</button>
         <button mat-button class="nested-menu-item"
-            (click)="sidenav.close(); scrollToSection('qualification')">Qualification</button>
-        <button mat-button class="nested-menu-item"
-            (click)="sidenav.close(); scrollToSection('project')">Project</button>
+            (click)="sidenav.close(); scrollToSection('education')">Education</button>
+        <!-- <button mat-button class="nested-menu-item"
+            (click)="sidenav.close(); scrollToSection('project')">Project</button> -->
     </div>
 
-    <button mat-button class="menu-item" (click)="sidenav.close(); scrollToSection('education')">Education</button>
+    <button mat-button class="menu-item" (click)="sidenav.close(); scrollToSection('')">Resume</button>
     <button mat-button class="menu-item" (click)="sidenav.close(); scrollToSection('contact')">Contact</button>
 </mat-sidenav>
 <!-- </mat-sidenav-container> -->
 
 <!-- Sections -->
+<!-- <section id="home" class="section home-section"> -->
 <section id="home" class="section home-section">
     <div class="intro-text">
         <p class="salutation">Hi there!, I'm</p>
