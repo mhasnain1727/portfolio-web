@@ -9,6 +9,7 @@ import FOG from 'vanta/dist/vanta.fog.min';
 import DOTS from 'vanta/dist/vanta.dots.min';
 import CLOUDS from 'vanta/dist/vanta.clouds.min';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -24,10 +25,18 @@ export class HomeComponent {
   private vantaEffect1: any;
   public contactForm: FormGroup;
 
+  // projects = [
+  //   { icon: 'assets/icons/portfolio.png', title: 'Project One', description: 'Description of Project One.' },
+  //   { icon: 'assets/icons/project2.png', title: 'Project Two', description: 'Description of Project Two.' },
+  //   { icon: 'assets/icons/project3.png', title: 'Project Three', description: 'Description of Project Three.' },
+  //   { icon: 'assets/icons/project4.png', title: 'Project Four', description: 'Description of Project Four.' }
+  // ];
+
   constructor(
     private elementRef: ElementRef,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private snackBar: MatSnackBar
   ) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
@@ -49,22 +58,22 @@ export class HomeComponent {
   ngAfterViewInit(): void {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-    // this.vantaEffect = WAVES({
-    //   el: this.elementRef.nativeElement.querySelector('.education-section'),
-    //   mouseControls: true,
-    //   touchControls: true,
-    //   gyroControls: false,
-    //   minHeight: 200.00,
-    //   minWidth: 200.00,
-    //   scale: 1.00,
-    //   scaleMobile: 1.00,
-    //   color: 0x314051,
-    //   shininess: 0.00,
-    //   waveHeight: 3.00,
-    //   waveSpeed: 1.15,
-    //   zoom: 0.79,    
-    //   THREE
-    // });
+    this.vantaEffect = WAVES({
+      el: this.elementRef.nativeElement.querySelector('.projects-section'),
+      mouseControls: false,
+      touchControls: false,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0xc0c0d,
+      shininess: 0.00,
+      waveHeight: 3.00,
+      waveSpeed: 1.15,
+      zoom: 0.5,
+      THREE
+    });
 
 
     this.vantaEffect = NET({
@@ -82,17 +91,17 @@ export class HomeComponent {
       THREE
     });
 
-    this.vantaEffect1 = DOTS({
-      el: this.elementRef.nativeElement.querySelector('.projects-section'),
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      THREE
-    });
+    // this.vantaEffect1 = DOTS({
+    //   el: this.elementRef.nativeElement.querySelector('.projects-section'),
+    //   mouseControls: true,
+    //   touchControls: true,
+    //   gyroControls: false,
+    //   minHeight: 200.00,
+    //   minWidth: 200.00,
+    //   scale: 1.00,
+    //   scaleMobile: 1.00,
+    //   THREE
+    // });
 
     this.vantaEffect1 = CLOUDS({
       el: this.elementRef.nativeElement.querySelector('.contact-section'),
@@ -194,6 +203,18 @@ export class HomeComponent {
 
   openLinks(url: string): void {
     window.open(url);
+  }
+
+  onClickKnowMore(val: string) {
+    this.snackBar.open('More information will be available soon!', 'Close', {
+      duration: 5000,
+    });
+  }
+
+  onClickResume(){
+    this.snackBar.open('Resume will be available soon!', 'Close', {
+      duration: 5000,
+    });
   }
 }
 

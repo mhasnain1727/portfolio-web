@@ -22,12 +22,11 @@
             About Me
         </button>
         <mat-menu #aboutMenu="matMenu" class="hover-menu">
-            <button mat-menu-item (click)="scrollToSection('personal-info')">Info
-                Info</button>
+            <button mat-menu-item (click)="scrollToSection('personal-info')">Info</button>
             <button mat-menu-item (click)="scrollToSection('education')">Education</button>
         </mat-menu>
 
-        <button mat-button (click)="scrollToSection('education')">Resume</button>
+        <button mat-button (click)="onClickResume()">Resume</button>
         <button mat-button (click)="scrollToSection('contact')">Contact</button>
     </div>
 </mat-toolbar>
@@ -50,7 +49,7 @@
             (click)="sidenav.close(); scrollToSection('project')">Project</button> -->
     </div>
 
-    <button mat-button class="menu-item" (click)="sidenav.close(); scrollToSection('')">Resume</button>
+    <button mat-button class="menu-item" (click)="sidenav.close(); onClickResume()">Resume</button>
     <button mat-button class="menu-item" (click)="sidenav.close(); scrollToSection('contact')">Contact</button>
 </mat-sidenav>
 <!-- </mat-sidenav-container> -->
@@ -105,18 +104,157 @@
 
         <!-- Right Section: Image -->
         <div class="profile-image">
-            <img src="../../assets/p1.jpg" alt="Profile Image" />
+            <img src="../../assets/im3.jpg" alt="Profile Image" />
         </div>
     </div>
 </section>
 
 
 
+<!-- <section id="projects" class="section projects-section">
+    <div class="container">
+        <div class="section-title">
+            <p>Projects</p>
+        </div>
+    </div>
+</section> -->
+
 <section id="projects" class="section projects-section">
     <div class="container">
         <div class="section-title">
             <p>Projects</p>
         </div>
+
+        <div class="project-container" [ngClass]="{'reverse': false}">
+            <div class="project-card" [ngClass]="{'reverse': false}">
+                <div class="project-icon1">
+                    <img src='assets/projects/haryana-gov-logo.png' alt="Project Icon" />
+                    <!-- <img src='assets/projects/micada-logo.png' alt="Project Icon" /> -->
+                </div>
+                <div class="project-description">
+                    <h3>MICADA Haryana Website</h3>
+                    <p>{{ 'description' }}</p>
+                    <button mat-fab extended (click)="onClickKnowMore('p1')">
+                        <mat-icon>info</mat-icon> Know More
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        <div class="project-container" [ngClass]="{'reverse': true}">
+            <div class="project-card" [ngClass]="{'reverse': true}">
+                <div class="project-icon2">
+                    <img src='assets/projects/dlf-logo.png' alt="Project Icon" />
+                </div>
+                <div class="project-description">
+                    <h3>DLF Golf Tee Time Website | Android App | iOS App</h3>
+                    <p>{{ 'description' }}</p>
+                    <button mat-fab extended (click)="onClickKnowMore('p2')">
+                        <mat-icon>info</mat-icon> Know More
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="project-container" [ngClass]="{'reverse': false}">
+            <div class="project-card" [ngClass]="{'reverse': false}">
+                <div class="project-icon3">
+                    <img src='assets/projects/pittsburgh-logo.png' alt="Project Icon" />
+                </div>
+                <div class="project-description">
+                    <h3>Pittsburg Public Safety Supply Website</h3>
+                    <p>description</p>
+                    <button mat-fab extended (click)="onClickKnowMore('p3')">
+                        <mat-icon>info</mat-icon> Know More
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="project-container" [ngClass]="{'reverse': true}">
+            <div class="project-card" [ngClass]="{'reverse': true}">
+                <div class="project-icon4">
+                    <img src='assets/projects/bharat-survey.png' alt="Project Icon" />
+                </div>
+                <div class="project-description">
+                    <h3>Bharat Survey Website | Android App</h3>
+                    <p>{{ 'description' }}</p>
+                    <button mat-fab extended (click)="onClickKnowMore('p4')">
+                        <mat-icon>info</mat-icon> Know More
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="project-container" [ngClass]="{'reverse': false}">
+            <div class="project-card" [ngClass]="{'reverse': false}">
+                <div class="project-icon5">
+                    <img src='assets/projects/logo.png' alt="Project Icon" />
+                </div>
+                <div class="project-description">
+                    <h3>Personal project using Angular</h3>
+                    <p>{{ 'description' }}</p>
+                    <button mat-fab extended (click)="onClickKnowMore('p5')">
+                        <mat-icon>info</mat-icon> Know More
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="project-container" [ngClass]="{'reverse': true}">
+            <div class="project-card" [ngClass]="{'reverse': true}">
+                <div class="project-icon6">
+                    <img src='assets/projects/sql-logo.png' alt="Project Icon" />
+                </div>
+                <div class="project-description">
+                    <h3>SQL : Data Cleaning using SQL & COVID Data Exploration using SQL</h3>
+                    <p>{{ 'description' }}</p>
+                    <button mat-fab extended (click)="onClickKnowMore('p6')">
+                        <mat-icon>info</mat-icon> Know More
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="project-container" [ngClass]="{'reverse': false}">
+            <div class="project-card" [ngClass]="{'reverse': false}">
+                <div class="project-icon7">
+                    <img src='assets/projects/AMU-logo.png' alt="Project Icon" />
+                </div>
+                <div class="project-description">
+                    <h3>JNMC Hospital Cum Trauma Center Website</h3>
+                    <p>{{ 'description' }}</p>
+                    <button mat-fab extended (click)="onClickKnowMore('p7')">
+                        <mat-icon>info</mat-icon> Know More
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="project-container" [ngClass]="{'reverse': false}">
+            <div class="project-card" [ngClass]="{'reverse': false}">
+                <div class="project-icon8">
+                    <img src='assets/projects/tableau-public.png' alt="Project Icon" />
+                </div>
+                <div class="project-description">
+                    <h3>Created Dashboards on Tableau</h3>
+                    <p>{{ 'Tableau Public Profile: ' }} <a href="https://public.tableau.com/app/profile/mhasnain1727" target="_blank" style="color: blue;">
+                        https://public.tableau.com/app/profile/mhasnain1727
+                    </a></p>
+                    <!-- <button mat-fab extended (click)="onClickKnowMore('p7')">
+                        <mat-icon>info</mat-icon> Know More
+                    </button> -->
+                </div>
+            </div>
+        </div>
+        
+        
+
+        <!-- <div class="project-container" *ngFor="let project of projects; let i = index">
+            <div class="project-card" [ngClass]="{'reverse': i % 2 !== 0}">
+                <div class="project-icon">
+                    <img [src]="project.icon" alt="Project Icon" />
+                </div>
+                <div class="project-description">
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.description }}</p>
+                </div>
+            </div>
+        </div> -->
     </div>
 </section>
 
@@ -135,7 +273,7 @@
         <div class="education-list">
             <div class="education-item">
                 <div class="icon">
-                    <mat-icon >school</mat-icon>
+                    <mat-icon>school</mat-icon>
                 </div>
                 <div class="education-item-content">
                     <h3>Master of Computer Application | New Delhi</h3>
@@ -144,7 +282,7 @@
             </div>
             <div class="education-item">
                 <div class="icon">
-                    <mat-icon >school</mat-icon>
+                    <mat-icon>school</mat-icon>
                 </div>
                 <div class="education-item-content">
                     <h3>B.Sc. (Hons.) | Computer Applications | AMU Aligarh</h3>
@@ -153,7 +291,7 @@
             </div>
             <div class="education-item">
                 <div class="icon">
-                    <mat-icon >school</mat-icon>
+                    <mat-icon>school</mat-icon>
                 </div>
                 <div class="education-item-content">
                     <h3>Senior Secondary School Certificate | AMU Aligarh</h3>
@@ -162,11 +300,11 @@
             </div>
             <div class="education-item">
                 <div class="icon">
-                    <mat-icon >school</mat-icon>
+                    <mat-icon>school</mat-icon>
                 </div>
                 <div class="education-item-content">
                     <h3>Secondary School Certificate | AMU Aligarh</h3>
-                    <p>Syedna Tahir Saifuddin High School (MINTO CIRCLE) - 2015</p>
+                    <p>Syedna Tahir Saifuddin High School (Minto Circle) - 2015</p>
                 </div>
             </div>
         </div>
