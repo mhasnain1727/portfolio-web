@@ -5,7 +5,7 @@
     <mat-icon class="cursor-pointer" (click)="onClickHome()">home</mat-icon>
 
     <!-- Menu Icon for Mobile View -->
-    <button mat-icon-button class="mobile-menu-icon" (click)="sidenav.toggle()">
+    <button mat-icon-button class="mobile-menu-icon" (click)="$event.stopPropagation(); sidenav.toggle();">
         <mat-icon>menu</mat-icon>
     </button>
 
@@ -38,15 +38,10 @@
     <button mat-button class="menu-item" (click)="sidenav.close(); scrollToSection('projects')">Projects</button>
 
     <!-- About Menu Nested List -->
-    <button mat-button class="menu-item" (click)="toggleAboutSubmenu(); scrollToSection('about-me')">About
-        Me</button>
+    <button mat-button class="menu-item" (click)="toggleAboutSubmenu(); scrollToSection('about-me')">About Me</button>
     <div *ngIf="aboutSubmenuOpen" class="nested-menu">
-        <button mat-button class="nested-menu-item"
-            (click)="sidenav.close(); scrollToSection('personal-info')">Info</button>
-        <button mat-button class="nested-menu-item"
-            (click)="sidenav.close(); scrollToSection('education')">Education</button>
-        <!-- <button mat-button class="nested-menu-item"
-            (click)="sidenav.close(); scrollToSection('project')">Project</button> -->
+        <button mat-button class="nested-menu-item" (click)="sidenav.close(); scrollToSection('personal-info')">Info</button>
+        <button mat-button class="nested-menu-item" (click)="sidenav.close(); scrollToSection('education')">Education</button>
     </div>
 
     <button mat-button class="menu-item" (click)="sidenav.close(); onClickResume()">Resume</button>

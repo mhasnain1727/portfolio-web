@@ -39,14 +39,11 @@
     color: black;
 }
 
-/* Mobile Menu Icon */
 .mobile-menu-icon {
     display: none;
 }
 
 
-/* Responsive Design */
-/* Responsive Design */
 @media (max-width: 768px) {
     .menu-items {
         display: none;
@@ -58,28 +55,25 @@
 }
 
 
-/* Sidenav Styles */
-.sidenav-container {
-    position: fixed;
-    /* This makes the sidenav overlay on top of content */
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 0%;
-    /* Make the sidenav fill the entire viewport height */
-    z-index: 999;
-    /* Ensure the sidenav is on top of other content */
-}
+// /* Sidenav Styles */
+// .sidenav-container {
+//     position: fixed;
+//     /* This makes the sidenav overlay on top of content */
+//     top: 0;
+//     left: 0;
+//     width: 0%;
+//     height: 0%;
+//     /* Make the sidenav fill the entire viewport height */
+//     z-index: 999;
+//     /* Ensure the sidenav is on top of other content */
+// }
 
-/* Mobile Sidenav */
 .mobile-sidenav {
     position: absolute;
-    /* Keep it positioned over the content */
     width: 60%;
     top: 55px;
     left: 0;
     height: auto;
-    // padding: 10px;
     gap: 10px;
     /* Ensure it fills the entire height */
     // background: #f3f2f2;
@@ -91,16 +85,16 @@
     transform: translateX(-100%);
     /* Initially hidden off-screen */
     transition: transform 0.3s ease;
-    background-color: #3f51b5;
+    background-color: #ffffff;
     /* Smooth transition for opening */
     z-index: 100;
 }
 
-/* When the sidenav is open */
-.sidenav-container.open .mobile-sidenav {
-    transform: translateX(0);
-    /* Move the sidenav into view */
-}
+// /* When the sidenav is open */
+// .sidenav-container.open .mobile-sidenav {
+//     transform: translateX(0);
+//     /* Move the sidenav into view */
+// }
 
 /* Menu Items for Mobile View */
 .mobile-sidenav .menu-item {
@@ -110,7 +104,9 @@
     border-bottom: 1px solid #ddd;
     text-align: left;
     padding: 16px;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-weight: 450;
+    padding-bottom: 30px;
     color: #3f51b5;
     font-weight: 500;
     // background-color: #ffffff;
@@ -119,8 +115,7 @@
 }
 
 
-/* Hover effect on mobile menu items */
-.mobile-sidenav .menu-item:hover {
+.mobile-sidenav button:hover {
     background: #3f51b5;
     color: #ffffff;
 }
@@ -137,7 +132,6 @@
     text-align: left;
     padding: 15px;
     background: linear-gradient(to right, #ffffff, #eae7e7);
-    // transition: background-color 0.3s;
 }
 
 .nested-menu-item:hover {
@@ -148,12 +142,12 @@
 
 
 /* Ensure the content behind the sidenav is dimmed or unaffected */
-.sidenav-container.open~.content {
-    filter: blur(4px);
-    /* Optionally blur content behind the sidenav */
-    transition: filter 0.3s ease;
-    /* Smooth transition for blur effect */
-}
+// .sidenav-container.open~.content {
+//     filter: blur(4px);
+//     /* Optionally blur content behind the sidenav */
+//     transition: filter 0.3s ease;
+//     /* Smooth transition for blur effect */
+// }
 
 
 
