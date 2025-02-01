@@ -216,5 +216,23 @@ export class HomeComponent {
       duration: 5000,
     });
   }
+
+
+  isMenuOpen = false;
+  isAboutMenuOpen = false;
+
+  toggleMenu() {
+    this.isAboutMenuOpen = false;
+    this.isMenuOpen = !this.isMenuOpen;
+    if (this.isMenuOpen) {
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+    } else {
+      document.body.style.overflow = 'auto'; // Restore scrolling when menu closes
+    }
+  }
+
+  toggleAboutMenu() {
+    this.isAboutMenuOpen = !this.isAboutMenuOpen;
+  }
 }
 

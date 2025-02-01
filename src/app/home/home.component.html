@@ -1,53 +1,50 @@
-<mat-toolbar class="sticky" color="primary">
-    <!-- Left Logo -->
-    <!-- <img src="../../assets/icons/portfolio.png" alt="Logo" class="logo" /> -->
-    <!-- <img src="../../assets/icons/home_.png" alt="Logo" class="logo" /> -->
+<div class="overlay" [class.show]="isMenuOpen" (click)="toggleMenu()"></div>
+
+<mat-toolbar color="primary" class="navbar mx-0">
+    <!-- Left Side Logo -->
     <mat-icon class="cursor-pointer" (click)="onClickHome()">home</mat-icon>
 
-    <!-- Menu Icon for Mobile View -->
-    <button mat-icon-button class="mobile-menu-icon" (click)="$event.stopPropagation(); sidenav.toggle();">
-        <mat-icon>menu</mat-icon>
-    </button>
-
-    <!-- Toolbar Title Spacer -->
-    <span class="flex-spacer"></span>
-
-    <!-- Right Menu Items for Larger Screens -->
-    <div class="menu-items">
+    <!-- Desktop Menu -->
+    <div class="desktop-menu">
         <button mat-button (click)="scrollToSection('home')">Home</button>
         <button mat-button (click)="scrollToSection('projects')">Projects</button>
 
-        <!-- About Menu with Hover -->
-        <button mat-button [matMenuTriggerFor]="aboutMenu" matTooltip="About Me">
-            About Me
-        </button>
-        <mat-menu #aboutMenu="matMenu" class="hover-menu">
+        <!-- Dropdown for About Me -->
+        <mat-menu #aboutMenu="matMenu">
             <button mat-menu-item (click)="scrollToSection('personal-info')">Info</button>
             <button mat-menu-item (click)="scrollToSection('education')">Education</button>
         </mat-menu>
+        <button mat-button [matMenuTriggerFor]="aboutMenu">About Me</button>
 
         <button mat-button (click)="onClickResume()">Resume</button>
         <button mat-button (click)="scrollToSection('contact')">Contact</button>
     </div>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button mat-icon-button class="mobile-menu-btn" (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
 </mat-toolbar>
 
-<!-- Sidenav for Mobile View -->
-<!-- <mat-sidenav-container class="sidenav-container"> -->
-<mat-sidenav #sidenav mode="over" class="mobile-sidenav">
-    <button mat-button class="menu-item" (click)="sidenav.close(); scrollToSection('home')">Home</button>
-    <button mat-button class="menu-item" (click)="sidenav.close(); scrollToSection('projects')">Projects</button>
+<!-- Mobile Menu Dropdown (Appears at Any Scroll Position) -->
+<div class="mobile-menu" [class.show]="isMenuOpen">
+    <button mat-button (click)="toggleMenu(); scrollToSection('home')">Home</button>
+    <button mat-button (click)="toggleMenu(); scrollToSection('projects')">Projects</button>
 
-    <!-- About Menu Nested List -->
-    <button mat-button class="menu-item" (click)="toggleAboutSubmenu(); scrollToSection('about-me')">About Me</button>
-    <div *ngIf="aboutSubmenuOpen" class="nested-menu">
-        <button mat-button class="nested-menu-item" (click)="sidenav.close(); scrollToSection('personal-info')">Info</button>
-        <button mat-button class="nested-menu-item" (click)="sidenav.close(); scrollToSection('education')">Education</button>
+    <!-- Mobile About Me Dropdown -->
+    <button mat-button (click)="toggleAboutMenu()">About Me</button>
+    <div *ngIf="isAboutMenuOpen" class="nested-menu">
+        <button mat-menu-item (click)="toggleMenu(); scrollToSection('personal-info')">Info</button>
+        <button mat-menu-item (click)="toggleMenu(); scrollToSection('education')">Education</button>
     </div>
 
-    <button mat-button class="menu-item" (click)="sidenav.close(); onClickResume()">Resume</button>
-    <button mat-button class="menu-item" (click)="sidenav.close(); scrollToSection('contact')">Contact</button>
-</mat-sidenav>
-<!-- </mat-sidenav-container> -->
+    <button mat-button (click)="onClickResume()">Resume</button>
+    <button mat-button (click)="toggleMenu(); scrollToSection('contact')">Contact</button>
+</div>
+
+
+
+
 
 <!-- Sections -->
 <!-- <section id="home" class="section home-section"> -->
@@ -227,17 +224,18 @@
                 </div>
                 <div class="project-description">
                     <h3>Created Dashboards on Tableau</h3>
-                    <p>{{ 'Tableau Public Profile: ' }} <a href="https://public.tableau.com/app/profile/mhasnain1727" target="_blank" style="color: blue;">
-                        https://public.tableau.com/app/profile/mhasnain1727
-                    </a></p>
+                    <p>{{ 'Tableau Public Profile: ' }} <a href="https://public.tableau.com/app/profile/mhasnain1727"
+                            target="_blank" style="color: blue;">
+                            https://public.tableau.com/app/profile/mhasnain1727
+                        </a></p>
                     <!-- <button mat-fab extended (click)="onClickKnowMore('p7')">
                         <mat-icon>info</mat-icon> Know More
                     </button> -->
                 </div>
             </div>
         </div>
-        
-        
+
+
 
         <!-- <div class="project-container" *ngFor="let project of projects; let i = index">
             <div class="project-card" [ngClass]="{'reverse': i % 2 !== 0}">

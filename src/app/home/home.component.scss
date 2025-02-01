@@ -1,153 +1,128 @@
-.sticky {
-    position: -webkit-sticky;
+/* Fixed Navbar */
+.navbar {
     position: fixed;
     top: 0;
-    z-index: 1000;
-}
-
-@media (max-width: 768px) {
-    .sticky {
-        position: -webkit-sticky;
-        position: fixed;
-        top: 0;
-        z-index: 1000;
-    }
-}
-
-.logo {
-    height: 40px;
-    width: auto;
+    left: 0;
     max-width: 100%;
-    object-fit: contain;
-}
-
-.flex-spacer {
-    flex: 1 1 auto;
-}
-
-.menu-items {
+    z-index: 1000;
     display: flex;
-    gap: 16px;
-
-    button {
-        font-size: 1.0rem;
-    }
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #3f51b5;
+    color: white;
+    margin: 0px !important;
 }
 
-.menu-items button:hover {
-    background-color: white;
-    color: black;
+/* Logo Styling */
+.logo {
+    width: 50px;
+    height: auto;
 }
 
-.mobile-menu-icon {
+/* Desktop Menu */
+.desktop-menu {
+    display: flex;
+    gap: 15px;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
     display: none;
 }
 
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 57px;
+    right: 0;
+    width: 250px;
+    max-width: 100%;
+    background: #3f51b5;
+    color: black;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    display: none;
+    flex-direction: column;
+    // border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1100;
+    margin: 0px;
+}
 
+/* Show Mobile Menu */
+.mobile-menu.show {
+    display: flex;
+    max-width: 100%;
+    margin: 0px;
+}
+
+/* Mobile Menu Buttons */
+.mobile-menu button {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background: #3f51b5;
+    color: #ffffff;
+    font-size: 1rem;
+    font-size: 450;
+}
+
+/* Hover Effect */
+.mobile-menu button:hover {
+    background: #ffffff;
+    color: #000;
+}
+
+/* Nested About Me Menu */
+.nested-menu {
+    padding-left: 0px;
+    margin-left: 20px;
+    background: #f5f5f5;
+}
+
+.nested-menu button {
+    padding: 8px;
+}
+
+/* ✅ Background Blur Effect */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    /* ✅ Blurs the screen */
+    z-index: 900;
+    display: none;
+    margin: 0px;
+}
+
+/* Show Blur Effect */
+.overlay.show {
+    display: block;
+    margin: 0px;
+    max-width: 100%;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .menu-items {
+    .desktop-menu {
         display: none;
     }
 
-    .mobile-menu-icon {
+    .mobile-menu-btn {
         display: block;
     }
 }
 
 
-// /* Sidenav Styles */
-// .sidenav-container {
-//     position: fixed;
-//     /* This makes the sidenav overlay on top of content */
-//     top: 0;
-//     left: 0;
-//     width: 0%;
-//     height: 0%;
-//     /* Make the sidenav fill the entire viewport height */
-//     z-index: 999;
-//     /* Ensure the sidenav is on top of other content */
-// }
-
-.mobile-sidenav {
-    position: absolute;
-    width: 60%;
-    top: 55px;
-    left: 0;
-    height: auto;
-    gap: 10px;
-    /* Ensure it fills the entire height */
-    // background: #f3f2f2;
-    /* Optional: background color */
-
-    // box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
-    /* Optional: adds a shadow effect */
-
-    transform: translateX(-100%);
-    /* Initially hidden off-screen */
-    transition: transform 0.3s ease;
-    background-color: #ffffff;
-    /* Smooth transition for opening */
-    z-index: 100;
-}
-
-// /* When the sidenav is open */
-// .sidenav-container.open .mobile-sidenav {
-//     transform: translateX(0);
-//     /* Move the sidenav into view */
-// }
-
-/* Menu Items for Mobile View */
-.mobile-sidenav .menu-item {
-    display: block;
-    align-items: center;
-    width: 100%;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-    padding: 16px;
-    font-size: 1rem;
-    font-weight: 450;
-    padding-bottom: 30px;
-    color: #3f51b5;
-    font-weight: 500;
-    // background-color: #ffffff;
-    background: linear-gradient(to right, #ffffff, #ffffff);
-    z-index: 100;
-}
+// ============================================================================================
 
 
-.mobile-sidenav button:hover {
-    background: #3f51b5;
-    color: #ffffff;
-}
-
-.nested-menu {
-    display: flex;
-    flex-direction: column;
-    padding-left: 16px;
-}
-
-.nested-menu-item {
-    display: flex;
-    justify-content: left;
-    text-align: left;
-    padding: 15px;
-    background: linear-gradient(to right, #ffffff, #eae7e7);
-}
-
-.nested-menu-item:hover {
-    background: #3f51b5;
-    color: #fff;
-}
-
-
-
-/* Ensure the content behind the sidenav is dimmed or unaffected */
-// .sidenav-container.open~.content {
-//     filter: blur(4px);
-//     /* Optionally blur content behind the sidenav */
-//     transition: filter 0.3s ease;
-//     /* Smooth transition for blur effect */
-// }
 
 
 
@@ -157,12 +132,13 @@
 /* Basic Section Styling */
 .section {
     padding: 50px;
+    margin: 0px;
     // margin: 30px 0;
     // border-radius: 8px;
 }
 
 .home-section {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     position: relative;
     overflow: hidden;
@@ -344,6 +320,7 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 }
+
 // personal info section end 
 
 
@@ -457,7 +434,7 @@
                     justify-content: center;
                     align-items: center;
                     // flex-wrap: wrap;
-    
+
                     h3 {
                         font-size: 1.4rem;
                         font-weight: 500;
@@ -467,7 +444,7 @@
                         margin-bottom: 0px;
                         max-width: 100%;
                     }
-    
+
                     p {
                         // font-size: 0.8rem;
                         // font-weight: 400;
@@ -482,7 +459,7 @@
                             }
                         }
                     }
-    
+
                     button {
                         // background: linear-gradient(to right, #63b4fc, #63b4fc);
                         // background: #63b4fc;
@@ -491,18 +468,18 @@
                         color: rgb(243, 245, 174);
                         animation: blink 1s infinite;
                     }
-    
+
                     // @keyframes blink {
                     //     0%,
                     //     100% {
                     //         opacity: 1;
-    
+
                     //         background: #4f4f4f;
                     //         // color: rgb(245, 174, 174);
                     //         // color: rgb(243, 245, 174);
                     //         color: #e7ba6e;
                     //     }
-    
+
                     //     50% {
                     //         opacity: 1;
                     //         background: #aed9ff;
@@ -510,8 +487,9 @@
                     //         // color: #ffffff;
                     //     }
                     // }
-    
+
                     @keyframes blink {
+
                         // 0% {
                         //     color: rgb(240, 240, 144);
                         //     background-color: #5e5c5c;
@@ -521,7 +499,7 @@
                             color: rgb(239, 119, 119);
                             background-color: #4b4b4b;
                         }
-    
+
                         100% {
                             color: #e7ba6e;
                             background-color: #5e5c5c;
@@ -531,7 +509,7 @@
             }
 
 
-            
+
 
             .reverse {
                 flex-direction: row-reverse;
