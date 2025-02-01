@@ -180,6 +180,9 @@
 
 .intro-text {
     margin-top: 20px;
+    background: rgba(53, 53, 53, 0.6);
+    // width: fit-content;
+    padding: 20px;
 
     .salutation {
         color: #000;
@@ -207,8 +210,9 @@
     .black {
         color: #ffffff;
         /* Black color */
-        font-size: 1rem;
-        margin: 5px 0;
+        font-size: 1.1rem;
+        font-weight: 400;
+        margin: 5px 0px 25px 0px;
     }
 
     .spacer {
@@ -336,50 +340,23 @@
         margin-bottom: 20px;
         /* Adds spacing between sections */
     }
-}
 
+    .profile-image img {
+        min-width: 320px;
+        height: 320px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 5px solid #00008b;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+}
 // personal info section end 
 
 
+// experience section start
 
-// // project section start
-// .projects-section {
-//     display: flex;
-//     justify-content: center;
-//     align-items: flex-start;
-//     padding: 20px;
-//     background-color: #000;
-//     border-radius: 0px;
-//     // background: linear-gradient(to bottom, #3f51b5, #ffffff, #00008b);
-//     width: 100%;
-//     min-height: 350px;
-//     /* Light background */
+// experience section end
 
-//     .container {
-//         margin: 0px !important;
-//         padding: 0px !important;
-
-//         .section-title {
-//             display: flex;
-//             justify-content: center;
-//             flex-wrap: wrap;
-//             align-items: center;
-//             width: 100%;
-//             height: auto;
-//             background: linear-gradient(to bottom, #3f51b5, #ffffff, #00008b);
-//             padding: 10px 0px 10px 0px;
-
-//             p {
-//                 padding-top: 10px;
-//                 font-family: Arial, Helvetica, sans-serif;
-//                 font-size: 2rem;
-//                 color: #000;
-//                 font-weight: 550;
-//             }
-//         }
-//     }
-// }
-// // project section end
 
 // project section start
 .projects-section {
@@ -389,8 +366,9 @@
     justify-content: center;
     padding: 20px;
     width: 100%;
+    background: #000;
     // background: linear-gradient(to bottom, #c3def6, #ffffff);
-    background: linear-gradient(to bottom, #000, #000);
+    // background: linear-gradient(to bottom, #cbcbcb, #4f4e4e, #000);
 
     .container {
         margin: 0px !important;
@@ -414,6 +392,7 @@
                 font-size: 2rem;
                 color: #ffffff;
                 font-weight: 550;
+                // text-shadow: 20px 20px 40px rgb(255, 255, 255);
             }
         }
 

@@ -58,22 +58,22 @@ export class HomeComponent {
   ngAfterViewInit(): void {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-    this.vantaEffect = WAVES({
-      el: this.elementRef.nativeElement.querySelector('.projects-section'),
-      mouseControls: false,
-      touchControls: false,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      color: 0xc0c0d,
-      shininess: 0.00,
-      waveHeight: 3.00,
-      waveSpeed: 1.15,
-      zoom: 0.5,
-      THREE
-    });
+    // this.vantaEffect = WAVES({
+    //   el: this.elementRef.nativeElement.querySelector('.projects-section'),
+    //   mouseControls: false,
+    //   touchControls: false,
+    //   gyroControls: false,
+    //   minHeight: 200.00,
+    //   minWidth: 200.00,
+    //   scale: 1.00,
+    //   scaleMobile: 1.00,
+    //   color: 0xc0c0d,
+    //   shininess: 0.00,
+    //   waveHeight: 3.00,
+    //   waveSpeed: 1.15,
+    //   zoom: 0.5,
+    //   THREE
+    // });
 
 
     this.vantaEffect = NET({
