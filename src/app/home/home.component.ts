@@ -32,6 +32,58 @@ export class HomeComponent {
   //   { icon: 'assets/icons/project4.png', title: 'Project Four', description: 'Description of Project Four.' }
   // ];
 
+  experiences = [
+    {
+      title: 'Senior Software Engineer',
+      company: 'People Tech Group Pvt. Ltd.',
+      location: 'Hyderabad, Telangana, India',
+      duration: 'Jan 2024 - Present',
+      icon: 'code',
+      responsibilities: [
+        'Developed interactive UI with Angular and Material.',
+        'Optimized website performance and improved loading speed.',
+        'Collaborated with backend team for API integration.'
+      ]
+    },
+    {
+      title: 'Senior Software Engineer',
+      company: 'Spotflock Technologies Pvt. Ltd.',
+      location: 'Hyderabad, Telangana, India',
+      duration: 'Oct 2022 - Jan 2024',
+      icon: 'code',
+      responsibilities: [
+        'Managed source control repositories with Git including branching strategies and pull requests.',
+        'Developed and maintained front-end web applications using HTML, CSS, JavaScript, Angular.',
+        'Performed debugging and troubleshooting tasks across multiple browsers and devices.',
+        'Provided technical support during post-deployment stages including bug fixing and maintenance tasks.',
+        'Designed, developed and implemented Android and iOS applications with ionic.'
+      ]
+    },
+    {
+      title: 'Software Engineer',
+      company: 'Vinove Software & Services',
+      location: 'Noida, Uttar Pradesh, India',
+      duration: 'Jan 2022 - Sept 2022',
+      icon: 'code',
+      responsibilities: [
+        'Integrated existing software into new or modified systems or operating environments.',
+        'Optimized code for better performance, scalability, reliability, security and maintainability.',
+        'Maintained version control repositories such as Git and GitHub which helped us track changes made in our source code over time.',
+        'Designed and implemented various web-based applications for clients.',
+      ]
+    },
+    {
+      title: 'Science and Engineering Research Intern', 
+      company: 'Science and Engineering Research Board (SERB)',
+      location: ' IIT Bhilai, Chhattisgarh, India',
+      duration: 'Aug 2021 - Oct 2021',
+      icon: 'code',
+      responsibilities: [
+        'Worked as an Intern under the project “On Parameterized Complexity of Various Graph Coloring Problems”',
+      ]
+    }
+  ];
+
   constructor(
     private elementRef: ElementRef,
     private router: Router,
@@ -67,11 +119,11 @@ export class HomeComponent {
     //   minWidth: 200.00,
     //   scale: 1.00,
     //   scaleMobile: 1.00,
-    //   color: 0xc0c0d,
+    //   color: 0x2b2b2e,
     //   shininess: 0.00,
     //   waveHeight: 3.00,
-    //   waveSpeed: 1.15,
-    //   zoom: 0.5,
+    //   waveSpeed: 0.5,
+    //   zoom: 0.35,
     //   THREE
     // });
 
@@ -86,8 +138,10 @@ export class HomeComponent {
       scale: 1.0,
       scaleMobile: 1.0,
       color: 0x3fbeff,
+      // color: 0xffffff,
       // backgroundColor: 0xffffff,
       backgroundColor: 0x3f51b5,
+      // backgroundColor: 0x00008b,
       THREE
     });
 

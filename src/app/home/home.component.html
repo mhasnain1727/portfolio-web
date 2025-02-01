@@ -103,13 +103,34 @@
 
 
 
-<!-- <section id="projects" class="section projects-section">
+
+<section id="experience" class="experience-section">
     <div class="container">
         <div class="section-title">
-            <p>Projects</p>
+            <p>Experience</p>
+        </div>
+
+        <div class="experience-container">
+            <div class="experience-card" *ngFor="let job of experiences; let i = index">
+                <!-- Left: Job Icon -->
+                <div class="icon">
+                    <mat-icon>{{ job.icon }}</mat-icon>
+                </div>
+
+                <!-- Right: Job Details -->
+                <div class="details">
+                    <h3>{{ job.title }}</h3>
+                    <p class="company">{{ job.company }} | {{ job.location }}</p>
+                    <p class="duration">{{ job.duration }}</p>
+                    <ul>
+                        <li *ngFor="let duty of job.responsibilities">{{ duty }}</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-</section> -->
+</section>
+
 
 <section id="projects" class="section projects-section">
     <div class="container">

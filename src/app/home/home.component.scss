@@ -9,7 +9,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: #3f51b5;
+    // background-color: #3f51b5;
+    background-color: #00008b;
     color: white;
     margin: 0px !important;
 }
@@ -26,6 +27,16 @@
     gap: 15px;
 }
 
+.desktop-menu button {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.desktop-menu button:hover {
+    background-color: #ffffff;
+    color: #000;
+}
+
 /* Mobile Menu Button */
 .mobile-menu-btn {
     display: none;
@@ -38,7 +49,8 @@
     right: 0;
     width: 250px;
     max-width: 100%;
-    background: #3f51b5;
+    // background: #3f51b5;
+    background: #00008b;
     color: black;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
@@ -63,7 +75,8 @@
     text-align: left;
     padding: 10px;
     border-bottom: 1px solid #ddd;
-    background: #3f51b5;
+    // background: #3f51b5;
+    background: #00008b;
     color: #ffffff;
     font-size: 1rem;
     font-size: 450;
@@ -124,9 +137,6 @@
 
 
 
-
-
-// ======================================================
 
 
 /* Basic Section Styling */
@@ -325,7 +335,122 @@
 
 
 // experience section start
+.experience-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+    background: linear-gradient(to bottom, #014496, #679ac6, #ffffff);
+    // background: linear-gradient(to bottom, #c3def6, #ffffff);
+    // background: linear-gradient(to bottom, #cbcbcb, #4f4e4e, #000);
 
+    .container {
+        margin: 0px !important;
+        padding: 0px !important;
+
+        .section-title {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            width: 100%;
+            height: auto;
+            padding: 10px 0px 10px 0px;
+            margin: 0px;
+
+            p {
+                padding-top: 10px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                // font-family:'Times New Roman', Times, serif;
+                // font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                // font-family: "Lato", Calibri;
+                // font-family: Arial, Helvetica, sans-serif;
+                font-size: 2rem;
+                color: #ffffff;
+                font-weight: 550;
+                // text-shadow: 20px 20px 40px rgb(255, 255, 255);
+            }
+        }
+
+        /* Container for Experience */
+        .experience-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 30px;
+
+
+            /* Experience Card */
+            .experience-card {
+                display: flex;
+                align-items: center;
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                text-align: left;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .experience-card:hover {
+                // transform: scale(1.05);
+                background-color: #e3e1e1;
+            }
+
+            /* Icon Styling */
+            .icon {
+                font-size: 40px;
+                margin-right: 20px;
+                color: #3f51b5;
+            }
+
+            /* Job Details */
+            .details {
+                flex: 1;
+            }
+
+            .details h3 {
+                margin: 0;
+                font-size: 22px;
+                color: #333;
+            }
+            
+            .details .company {
+                font-weight: bold;
+                color: #555;
+            }
+            
+            .details .duration {
+                font-style: italic;
+                color: #777;
+            }
+            
+            /* Alternate Left-Right Alignment */
+            .experience-card.alt {
+                flex-direction: row-reverse;
+            }
+
+
+            @media (max-width: 768px) {
+                .experience-card {
+                    flex-direction: column;
+                    text-align: center;
+                }
+            
+                .experience-card.alt {
+                    flex-direction: column;
+                }
+            
+                .icon {
+                    margin-bottom: 10px;
+                }
+            }
+            
+        }
+    }
+}
 // experience section end
 
 
@@ -337,7 +462,7 @@
     justify-content: center;
     padding: 20px;
     width: 100%;
-    background: #000;
+    background: linear-gradient(to bottom left, #000, #e6e6e6);
     // background: linear-gradient(to bottom, #c3def6, #ffffff);
     // background: linear-gradient(to bottom, #cbcbcb, #4f4e4e, #000);
 
@@ -359,7 +484,8 @@
 
             p {
                 padding-top: 10px;
-                font-family: Arial, Helvetica, sans-serif;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                // font-family: Arial, Helvetica, sans-serif;
                 font-size: 2rem;
                 color: #ffffff;
                 font-weight: 550;
@@ -536,27 +662,17 @@
 // project section end
 
 
-.qualification-section {
-    background-color: #e6ffe6;
-}
 
-.education-section {
-    background-color: #ffecb3;
-}
 
-.contact-section {
-    background-color: #ffe6e6;
-}
+// h2 {
+//     color: #333;
+// }
 
-h2 {
-    color: #333;
-}
-
-.profile-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-}
+// .profile-image {
+//     width: 100px;
+//     height: 100px;
+//     border-radius: 50%;
+// }
 
 /* Smooth Scroll Behavior */
 html {
@@ -607,7 +723,8 @@ html {
             margin-top: 20px;
 
             p {
-                font-family: Arial, Helvetica, sans-serif;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                // font-family: Arial, Helvetica, sans-serif;
                 font-size: 2rem;
                 color: #000;
                 font-weight: 550;
@@ -695,10 +812,12 @@ html {
             width: 100%;
 
             p {
-                font-family: Arial, Helvetica, sans-serif;
+                // font-family: Verdana, Geneva, Tahoma, sans-serif;
+                // font-family: Arial, Helvetica, sans-serif;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 font-size: 2rem;
                 color: #ffffff;
-                font-weight: 550;
+                font-weight: 650;
             }
         }
 
