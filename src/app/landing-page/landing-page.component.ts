@@ -63,5 +63,6 @@ export class LandingPageComponent {
   onClickViewJourney(): void {
     this.router.navigate(['/home']);
   }
+  
 }
 
