@@ -24,6 +24,8 @@ export class HomeComponent {
   private vantaEffect: any;
   private vantaEffect1: any;
   public contactForm: FormGroup;
+  public isMenuOpen = false;
+  public isAboutMenuOpen = false;
 
   // projects = [
   //   { icon: 'assets/icons/portfolio.png', title: 'Project One', description: 'Description of Project One.' },
@@ -202,8 +204,6 @@ export class HomeComponent {
     //   THREE,
     // });
 
-
-
     // this.vantaEffect = GLOBE({
     //   el: this.elementRef.nativeElement.querySelector('.home-section'), 
     //   mouseControls: false,
@@ -270,10 +270,6 @@ export class HomeComponent {
       duration: 5000,
     });
   }
-
-
-  isMenuOpen = false;
-  isAboutMenuOpen = false;
 
   toggleMenu() {
     this.isAboutMenuOpen = false;
