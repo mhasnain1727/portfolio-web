@@ -25,6 +25,7 @@ export class HomeComponent {
   private vantaEffect1: any;
   public contactForm: FormGroup;
   public isMenuOpen = false;
+  
   public isAboutMenuOpen = false;
 
   // projects = [
