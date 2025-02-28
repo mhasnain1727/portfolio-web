@@ -43,9 +43,13 @@ export class HomeComponent {
       duration: 'Jan 2024 - Present',
       icon: 'code',
       responsibilities: [
-        'Developed interactive UI with Angular and Material.',
-        'Optimized website performance and improved loading speed.',
-        'Collaborated with backend team for API integration.'
+        'Analyzed client requirements and identified optimal solutions to meet business needs.',
+        'Played a key role in task delegation, ensuring efficient work distribution among the team.',
+        'Enhanced client applications by modifying existing code and overseeing new development as per client specifications.',
+        'Conducted thorough reviews of all Minutes of Meetings (MOMs) and documentation to ensure accuracy and compliance.',
+        'Managed the approval process for deployment, ensuring all necessary reviews were completed.',
+        'Led Angular front-end development, ensuring high-quality, scalable, and maintainable code.',
+        'Performed comprehensive code reviews and testing to ensure seamless application delivery without hindrances.',
       ]
     },
     {
@@ -267,9 +271,10 @@ export class HomeComponent {
   }
 
   onClickResume(){
-    this.snackBar.open('Resume will be available soon!', 'Close', {
-      duration: 5000,
-    });
+    // this.snackBar.open('Resume will be available soon!', 'Close', {
+    //   duration: 5000,
+    // });
+    window.open('https://drive.google.com/file/d/1BCvQT4MvKWN9VlqCE9m2csibNUf3xuk2/view?usp=sharing', '_blank');
   }
 
   toggleMenu() {
