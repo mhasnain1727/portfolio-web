@@ -15,13 +15,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDialogModule} from '@angular/material/dialog';
+import { ProjectDescriptionDialogComponent } from './home/project-description-dialog/project-description-dialog.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    ProjectDescriptionDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -35,12 +38,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatButtonModule,
     MatIconModule,
     MatMenuModule,
     MatFormFieldModule,
     MatSnackBarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,6 +10,8 @@ import DOTS from 'vanta/dist/vanta.dots.min';
 import CLOUDS from 'vanta/dist/vanta.clouds.min';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { ProjectDescriptionDialogComponent } from './project-description-dialog/project-description-dialog.component';
 
 
 @Component({
@@ -95,7 +97,8 @@ export class HomeComponent {
     private elementRef: ElementRef,
     private router: Router,
     private fb: FormBuilder,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    public dialog: MatDialog
   ) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
@@ -265,16 +268,24 @@ export class HomeComponent {
   }
 
   onClickKnowMore(val: string) {
-    this.snackBar.open('More information will be available soon!', 'Close', {
-      duration: 5000,
+    // this.snackBar.open('More information will be available soon!', 'Close', {
+    //   duration: 5000,
+    // });
+    this.dialog.open(ProjectDescriptionDialogComponent, {
+      width: '1200px',
+      data: { code: val },
     });
   }
 
   onClickResume(){
-    // this.snackBar.open('Resume will be available soon!', 'Close', {
-    //   duration: 5000,
-    // });
-    window.open('https://drive.google.com/file/d/1BCvQT4MvKWN9VlqCE9m2csibNUf3xuk2/view?usp=sharing', '_blank');
+    this.snackBar.open('Redircting...', '', {
+      duration: 1200,
+    });
+    
+    setTimeout(() => {
+      window.open('https://drive.google.com/file/d/1BCvQT4MvKWN9VlqCE9m2csibNUf3xuk2/view?usp=sharing', '_blank');
+    }, 1200);
+    
   }
 
   toggleMenu() {
