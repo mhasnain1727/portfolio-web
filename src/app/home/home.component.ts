@@ -70,8 +70,8 @@ export class HomeComponent {
     },
     {
       title: 'Software Engineer',
-      company: 'Vinove Software & Services',
-      location: 'Noida, Uttar Pradesh, India',
+      company: 'Rankzoid Pvt. Ltd.',
+      location: 'Aligarh, Uttar Pradesh, India',
       duration: 'Jan 2022 - Sept 2022',
       icon: 'code',
       responsibilities: [
@@ -111,7 +111,7 @@ export class HomeComponent {
 
   onSubmit() {
     if (this.contactForm.valid) {
-      console.log('Form Data:', this.contactForm.value);
+      // console.log('Form Data:', this.contactForm.value);
       alert('Message sent successfully!');
       this.contactForm.reset();
     }
@@ -283,7 +283,7 @@ export class HomeComponent {
     });
     
     setTimeout(() => {
-      window.open('https://drive.google.com/file/d/1BCvQT4MvKWN9VlqCE9m2csibNUf3xuk2/view?usp=sharing', '_blank');
+      window.open('https://drive.google.com/file/d/1JlXAnyr0MEpkAdo1IgEEDW5VNPCCvfjY/view?usp=sharing', '_blank');
     }, 1200);
     
   }

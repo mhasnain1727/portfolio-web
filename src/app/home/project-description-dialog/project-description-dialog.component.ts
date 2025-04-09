@@ -40,10 +40,10 @@ export class ProjectDescriptionDialogComponent {
     }else if(this.data.code == 'p3'){
       this.title = 'Pittsburg Public Safety Supply Website';
       this.description = `
-        • Did front-end development efforts for the Pittsburgh Public Safety Supply Website, a platform specializing in providing goods. It is one of the largest public safety equipment and uniform suppliers’ platform.<br>
+        • Front-end development efforts for the Pittsburgh Public Safety Supply Website, a platform specializing in providing goods. It is one of the largest public safety equipment and uniform suppliers’ platform.<br>
         • Developed and maintained the user interface using Angular and Ionic, ensuring an intuitive and responsive design.<br>
         • Implemented various user-centric features and functionalities to enhance the user experience.<br>
-        • Collaborated closely with the design and back-end development teams to ensure seamless integration of front-endcomponents.`;
+        • Collaborated closely with the design and back-end development teams to ensure seamless integration of front-end components.`;
     }else if(this.data.code == 'p4'){
       this.title = 'Bharat Survey Website | Android App';
       this.description = `
@@ -66,7 +66,11 @@ export class ProjectDescriptionDialogComponent {
         • Wrote the actual script in SQL and created the visualizations in Tableau.`;
     }else if(this.data.code == 'p7'){
       this.title = 'JNMC Hospital Cum Trauma Center Website';
-      this.description = '• Developed a website for Jawaharlal Medical college AMU as a final project in B.Sc. (Hons.) ComputerApplication.';
+      this.description = `
+        • Developed a website for Jawaharlal Medical College Hospital AMU. 
+        • Develop as website to register a user for OPD.
+        • Also user can register for trauma center in case of emergency situation to reduce the registration time once patience reached the hospital. 
+        • This all about is also a part of dissertation and minor and major project of my graduation exam.`;
     }
   }
 
