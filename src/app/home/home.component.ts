@@ -283,7 +283,7 @@ export class HomeComponent {
     });
     
     setTimeout(() => {
-      window.open('https://drive.google.com/file/d/1JlXAnyr0MEpkAdo1IgEEDW5VNPCCvfjY/view?usp=sharing', '_blank');
+      window.open('https://drive.google.com/file/d/19ryAXKi_lVbSEuF3RUIfyhYZ20Rydkn6/view?usp=drive_link', '_blank');
     }, 1200);
     
   }
