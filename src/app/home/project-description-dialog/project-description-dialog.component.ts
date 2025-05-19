@@ -67,10 +67,10 @@ export class ProjectDescriptionDialogComponent {
     }else if(this.data.code == 'p7'){
       this.title = 'JNMC Hospital Cum Trauma Center Website';
       this.description = `
-        • Developed a website for Jawaharlal Medical College Hospital AMU. 
-        • Develop as website to register a user for OPD.
-        • Also user can register for trauma center in case of emergency situation to reduce the registration time once patience reached the hospital. 
-        • This all about is also a part of dissertation and minor and major project of my graduation exam.`;
+        • Developed a website for Jawaharlal Medical College Hospital AMU. <br>
+        • Develop as website to register a user for OPD. <br>
+        • Also user can register for trauma center in case of emergency situation to reduce the registration time once patience reached the hospital. <br>
+        • This all about is also a part of dissertation and minor and major project of my graduation exam.<br>`
     }
   }
 
