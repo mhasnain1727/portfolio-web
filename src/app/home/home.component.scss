@@ -258,7 +258,7 @@
     flex-wrap: wrap;
     /* Ensures responsiveness */
     align-items: center;
-    max-width: 1200px;
+    // max-width: 1500px;
     width: 100%;
     gap: 20px;
 }
@@ -266,7 +266,8 @@
 /* Left Section: About Me */
 .about-me {
     flex: 1;
-    min-width: 300px;
+    // min-width: 300px;
+    min-width: 65%;
     /* Ensures it doesn't shrink too much */
 }
 
@@ -276,6 +277,42 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2rem;
     font-weight: 550;
+}
+
+.about-me .c-1 {
+    color: #0a0a0a;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 550;
+}
+
+.about-me .c-2 {
+    color: #010101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+// .custom-list {
+//     list-style: none; /* Removes the default black dot */
+//     list-style-type: none;
+//     padding-left: 1.5em; /* Adds spacing for the custom symbol */
+// }
+
+// .custom-list li::before {
+//     content: "🔹"; /* Adds the desired symbol */
+//     margin-right: 0.5em; /* Adds spacing between the symbol and text */
+//     color: #00008b; /* Optional: Sets the color of the symbol */
+//     padding: 0;
+//     margin: 0;
+// }
+
+.custom-list {
+    li {
+        color:#0a0a0a;
+        font-size: 0.9rem;
+        margin-bottom: 0.5em;
+    }
 }
 
 .about-me p {
@@ -293,6 +330,7 @@
     justify-content: center;
     align-items: center;
     min-width: 200px;
+    min-width: 25%;
     /* Ensures it doesn't shrink too much */
 }
 
