@@ -1,0 +1,36 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+:host::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom right, rgba(183, 202, 237, 0.6), rgba(254, 254, 254, 0.6)),
+              url('/assets/background/w1.jpg') no-repeat center center / cover;
+  z-index: -1;
+  filter: brightness(0.9);
+}
+
+.signin-container {
+  max-width: 400px;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+mat-form-field {
+  background-color: #f5f9ff;
+  border-radius: 4px;
+}
+
+button {
+  font-weight: 600;
+}

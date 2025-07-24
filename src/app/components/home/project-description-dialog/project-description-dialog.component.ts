@@ -17,7 +17,6 @@ export class ProjectDescriptionDialogComponent {
   ) {}
 
   ngOnInit(){
-    console.log(this.data)
     if(this.data.code == 'p1'){
       this.title = 'MICADA Haryana Website';
       this.description = `

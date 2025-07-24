@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,8 +12,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatDialogModule} from '@angular/material/dialog';
-import { ProjectDescriptionDialogComponent } from './home/project-description-dialog/project-description-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatOptionModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { TokenService } from './services/common/token.service';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ProjectDescriptionDialogComponent } from './components/home/project-description-dialog/project-description-dialog.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { HomeComponent } from './components/home/home.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { JwtInterceptor } from './Interceptor/jwt.interceptor';
 
 
 @NgModule({
@@ -24,7 +31,9 @@ import { ProjectDescriptionDialogComponent } from './home/project-description-di
     AppComponent,
     HomeComponent,
     LandingPageComponent,
-    ProjectDescriptionDialogComponent
+    ProjectDescriptionDialogComponent,
+    SignUpComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
@@ -38,14 +47,19 @@ import { ProjectDescriptionDialogComponent } from './home/project-description-di
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatIconModule,
-    MatMenuModule,
     MatFormFieldModule,
     MatSnackBarModule,
     MatTooltipModule,
-    MatDialogModule
+    MatDialogModule,
+    MatOptionModule,
+    MatInputModule,
+    MatSelectModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    TokenService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
