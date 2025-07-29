@@ -1,18 +1,17 @@
 <mat-sidenav-container class="sidenav-container" [hasBackdrop]="false">
-  <mat-sidenav
-    #drawer
-    mode="side"
-    [opened]="!collapsed"
-    class="sidebar"
-    [fixedInViewport]="true"
-  >
+  <mat-sidenav #drawer mode="side" [opened]="!collapsed" class="sidebar" [fixedInViewport]="true">
     <div class="sidebar-header p-3 text-white">
       <p>{{ userData?.userType | uppercase}}</p>
     </div>
 
     <mat-nav-list>
-      <a mat-list-item routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-      <a mat-list-item routerLink="/profile" routerLinkActive="active">Profile</a>
+      <ng-container *ngFor="let section of sidebarMenu">
+        <!-- <h6 class="ms-3 mt-3">{{ section.heading }}</h6> -->
+        <a *ngFor="let item of section.links" mat-list-item [routerLink]="item.path" routerLinkActive="active">
+          {{ item.label }}
+        </a>
+      </ng-container>
     </mat-nav-list>
+
   </mat-sidenav>
 </mat-sidenav-container>

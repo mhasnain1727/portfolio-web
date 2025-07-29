@@ -23,11 +23,16 @@ export class TopbarComponent {
   ngOnInit() {
     const data = JSON.parse(sessionStorage.getItem('auth_token')!);
     this.userData = data.claim;
-    console.log(this.userData)
   }
 
   goToProfile() {
-    this.router.navigate(['/user/profile']);
+    if (this.userData?.userType === 'student') {
+      this.router.navigate(['/user/profile'])
+    } else if (this.userData?.userType === 'teacher') {
+      this.router.navigate(['/user/profile'])
+    } else if (this.userData?.userType === 'admin') {
+      this.router.navigate(['/admin/profile'])
+    }
   }
 
   logout() {

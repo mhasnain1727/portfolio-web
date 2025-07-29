@@ -67,9 +67,9 @@ export class JwtInterceptor implements HttpInterceptor {
     const tokenStr = sessionStorage.getItem('auth_token');
     const token = tokenStr ? JSON.parse(tokenStr)?.authToken : null;
 
-    console.log(token)
+    // console.log(token)
     if (token) {
-      console.log('trueee')
+      // console.log('trueee')
       request = request.clone({
         setHeaders: { Authorization: `Bearer ${token}` }
       });
@@ -77,7 +77,7 @@ export class JwtInterceptor implements HttpInterceptor {
 
     return next.handle(request).pipe(
       catchError((err: HttpErrorResponse) => {
-        console.log(err)
+        // console.log(err)
         if (err.status === 403) {
           // Access token expired. Try to refresh
           return this.authService.refreshAccessToken().pipe(
@@ -88,7 +88,7 @@ export class JwtInterceptor implements HttpInterceptor {
               return next.handle(updatedRequest);
             }),
             catchError(error => {
-              console.log(error)
+              // console.log(error)
               // this.authService.autoLogout().subscribe({
               //   next: (res) => {
               //     this.tokenService.clear();

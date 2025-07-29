@@ -28,8 +28,15 @@ export class AuthService {
     }).pipe(
       tap(response => {
         this.tokenService.authenticate(response);
-        if (this.router.url === '/signin') {
-          this.router.navigate(['/user/dashboard']);
+        if (this.router.url === '/signin' && response?.msg == "success") {
+          if (response?.user?.userType === 'student') {
+            this.router.navigate(['/user/dashboard'])
+          } else if (response?.user?.userType === 'teacher') {
+            this.router.navigate(['/user/dashboard'])
+          } else if (response?.user?.userType === 'admin') {
+            console.log('admin')
+            this.router.navigate(['/admin/dashboard'])
+          }
         }
       }),
       map(res => res.accessToken)
@@ -67,8 +74,10 @@ export class AuthService {
     });
   }
 
-  getStudentUsers() {
-    return this.http.get<any>(`${environment.apiUrl}getAllUsers`);
-  }
+  getUsersByType(userType: string) {
+  return this.http.get<any>(`${environment.apiUrl}getAllUsers`, {
+    params: { userType }
+  });
+}
 
 }

@@ -10,6 +10,9 @@ import { InnerPageLayoutComponent } from './components/inner-page-layout/inner-p
 import { authGuard } from './guards/auth.guard';
 import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { adminGuard } from './guards/admin.guard';
+import { UsersListComponent } from './components/admin/users-list/users-list.component';
+import { ActiveSessionsComponent } from './components/active-sessions/active-sessions.component';
 
 
 const routes: Routes = [
@@ -44,6 +47,10 @@ const routes: Routes = [
         path: 'profile', 
         component: ProfileComponent,
       },
+      {  
+        path: 'active-sessions', 
+        component: ActiveSessionsComponent,
+      },
     ]
     // children: [
     //   {
@@ -59,6 +66,31 @@ const routes: Routes = [
     //     data: { roles: ['admin'] }
     //   }
     // ]
+  },
+  {
+    path: 'admin',
+    component: InnerPageLayoutComponent,
+    canActivate: [adminGuard],
+    data: { roles: ['admin'] },
+    children: [
+      {  path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      {  
+        path: 'dashboard', 
+        component: DashboardComponent,
+      },
+      {  
+        path: 'profile', 
+        component: ProfileComponent,
+      },
+      {  
+        path: 'active-sessions', 
+        component: ActiveSessionsComponent,
+      },
+      {  
+        path: 'users', 
+        component: UsersListComponent,
+      },
+    ]
   },
   { path: '', redirectTo: 'info', pathMatch: 'full' },
   { path: '**', redirectTo: 'info', pathMatch: 'full' }

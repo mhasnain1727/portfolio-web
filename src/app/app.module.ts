@@ -35,6 +35,8 @@ import { ErrorInterceptor } from './Interceptor/error.interceptor';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
+import { UsersListComponent } from './components/admin/users-list/users-list.component';
+import { ActiveSessionsComponent } from './components/active-sessions/active-sessions.component';
 
 
 
@@ -51,7 +53,9 @@ import { MatSortModule } from '@angular/material/sort';
     TopbarComponent,
     InnerPageLayoutComponent,
     UnauthorizedComponent,
-    ProfileComponent
+    ProfileComponent,
+    UsersListComponent,
+    ActiveSessionsComponent
   ],
   imports: [
     BrowserModule,

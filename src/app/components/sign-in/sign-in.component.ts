@@ -80,7 +80,13 @@ export class SignInComponent {
               verticalPosition: 'top',
             });
 
-            this.router.navigate(['/user/dashboard'])
+            if(res?.user?.userType === 'student') {
+              this.router.navigate(['/user/dashboard'])
+            }else if(res?.user?.userType === 'teacher') {
+              this.router.navigate(['/user/dashboard'])
+            }else if(res?.user?.userType === 'admin') {
+              this.router.navigate(['/admin/dashboard'])
+            }
           } else {
             this.snackBar.open(res.msg, 'Close', {
               duration: 3000, // in ms
