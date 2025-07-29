@@ -111,7 +111,6 @@ export class HomeComponent {
 
   onSubmit() {
     if (this.contactForm.valid) {
-      // console.log('Form Data:', this.contactForm.value);
       alert('Message sent successfully!');
       this.contactForm.reset();
     }

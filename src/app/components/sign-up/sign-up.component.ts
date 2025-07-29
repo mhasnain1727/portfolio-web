@@ -99,16 +99,12 @@ export class SignUpComponent {
 
       this.signupUser(reqBody);
 
-
-      console.log('Form Submitted:', this.signupForm.value);
-      // Submit logic here
     } else {
       this.signupForm.markAllAsTouched();
     }
   }
 
   signupUser(reqBody: any) {
-    console.log(reqBody)
     this.authService
       .registerUser(reqBody)
       .pipe(first())

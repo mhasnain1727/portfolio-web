@@ -1,0 +1,40 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+:host::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom right, rgba(183, 202, 237, 0.3), rgba(254, 254, 254, 0.3)),
+              url('/assets/background/unauthorized-backgroung.jpg') no-repeat center center / cover;
+  z-index: -1;
+  filter: brightness(0.9);
+}
+
+.unauthorized-container {
+  // background-color: #f8f9fa;
+  padding: 40px;
+
+  h2 {
+    font-weight: bold;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.text-danger {
+  font-size: 1.8rem;
+}
+
+.text-muted {
+  font-size: 1.2rem;
+  color: #ffffff !important;
+}

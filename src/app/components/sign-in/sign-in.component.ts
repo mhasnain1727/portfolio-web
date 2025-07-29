@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { first } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
+import { TokenService } from 'src/app/services/common/token.service';
 
 
 @Component({
@@ -23,12 +24,23 @@ export class SignInComponent {
     private http: HttpClient,
     private router: Router,
     private location: Location,
-    private authService: AuthService
+    private authService: AuthService,
+    private tokenService: TokenService
   ) {
     this.signinForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]]
     });
+  }
+
+  ngOnInit(){
+    // sessionStorage.clear();
+    if(sessionStorage.getItem('auth_token')){
+      this.authService.refreshAccessToken().subscribe({
+        next: ()=>{},
+        error: ()=>{}
+      });
+    }
   }
 
   onSubmit() {
@@ -51,7 +63,6 @@ export class SignInComponent {
   }
 
   signInUser(reqBody: any) {
-    console.log(reqBody)
     this.authService
       .loginUser(reqBody)
       .pipe(first())
@@ -59,14 +70,17 @@ export class SignInComponent {
         next: (res) => {
 
           if (res.msg == 'Login successful') {
-            sessionStorage.setItem('user', res?.user);
-            sessionStorage.setItem('token', res?.accessToken);
+            this.tokenService.authenticate(res);
+            // sessionStorage.setItem('auth_token', JSON.stringify(res?.accessToken));
+      
             this.snackBar.open(res.msg, 'Close', {
               duration: 3000, // in ms
               panelClass: ['success-snackbar'], // Optional custom style
               horizontalPosition: 'center',
               verticalPosition: 'top',
             });
+
+            this.router.navigate(['/user/dashboard'])
           } else {
             this.snackBar.open(res.msg, 'Close', {
               duration: 3000, // in ms
@@ -77,7 +91,7 @@ export class SignInComponent {
           }
         },
         error: (err) => {
-          this.snackBar.open(err?.errors[0], 'Close', {
+          this.snackBar.open(err?.errors?.[0], 'Close', {
             duration: 3000, // in ms
             panelClass: ['error-snackbar'], // Optional custom style
             horizontalPosition: 'center',

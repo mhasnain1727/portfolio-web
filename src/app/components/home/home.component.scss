@@ -736,7 +736,7 @@ html {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-image: url('../../assets/education-watermark.jpg');
+        background-image: url('/assets/education-watermark.jpg');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -809,7 +809,6 @@ html {
                     color: #747171;
                 }
             }
-
         }
 
         @media (max-width: 768px) {

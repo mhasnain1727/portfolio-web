@@ -1,0 +1,12 @@
+<div class="inner-page-layout d-flex">
+  <app-sidemenu [collapsed]="isSidebarCollapsed"></app-sidemenu>
+
+  <div class="flex-grow-1">
+    <app-topbar (toggleSidebar)="isSidebarCollapsed = !isSidebarCollapsed"></app-topbar>
+
+    <div class="inner-page-content p-3">
+      <!-- Your routed views or content -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

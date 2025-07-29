@@ -24,6 +24,18 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { HomeComponent } from './components/home/home.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { JwtInterceptor } from './Interceptor/jwt.interceptor';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
+import { TopbarComponent } from './components/topbar/topbar.component';
+import { MatListModule } from '@angular/material/list';
+import { InnerPageLayoutComponent } from './components/inner-page-layout/inner-page-layout.component';
+import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ErrorInterceptor } from './Interceptor/error.interceptor';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+
 
 
 @NgModule({
@@ -33,7 +45,13 @@ import { JwtInterceptor } from './Interceptor/jwt.interceptor';
     LandingPageComponent,
     ProjectDescriptionDialogComponent,
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    DashboardComponent,
+    SidemenuComponent,
+    TopbarComponent,
+    InnerPageLayoutComponent,
+    UnauthorizedComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -55,9 +73,14 @@ import { JwtInterceptor } from './Interceptor/jwt.interceptor';
     MatInputModule,
     MatSelectModule,
     HttpClientModule,
+    MatListModule ,
+    MatPaginatorModule,
+    MatTableModule,
+    MatSortModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     TokenService
   ],
   bootstrap: [AppComponent]

@@ -1,0 +1,78 @@
+<!-- <div class="container"> -->
+<div class="card shadow-sm px-4 pb-4 pt-2 profile-card mx-auto">
+    <!-- Profile Image on Top Center -->
+    <div class="d-flex justify-content-center">
+        <div class="image-wrapper mb-2">
+            <img [src]="imagePreview" alt="Profile" class="rounded-circle profile-image shadow" data-bs-toggle="modal"
+                data-bs-target="#imageModal" style="cursor: pointer;" matTooltip="Click to enlarge" />
+            <input *ngIf="editMode" type="file" accept="image/*" (change)="onImageSelected($event)"
+                class="form-control mt-2" />
+        </div>
+    </div>
+
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Full Name</mat-label>
+                    <input matInput formControlName="fullName" />
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" />
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Phone</mat-label>
+                    <input matInput type="tel" formControlName="phone" />
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>User Type</mat-label>
+                    <input matInput formControlName="userType" />
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6 mb-3" *ngIf="editMode">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" formControlName="password" />
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="text-end mt-3" *ngIf="editMode">
+            <button mat-raised-button color="primary" type="submit">
+                Save Changes
+            </button>
+        </div>
+    </form>
+
+    <div class="d-flex justify-content-end align-items-center mt-1">
+        <!-- <h4 class="text-primary m-0">My Profile</h4> -->
+        <button mat-stroked-button color="primary" (click)="toggleEdit()">
+            {{ editMode ? 'Cancel' : 'Edit' }}
+        </button>
+    </div>
+</div>
+<!-- </div> -->
+
+
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content text-center p-4">
+            <img [src]="imagePreview" alt="Large Preview" class="img-fluid rounded shadow" style="max-height: 80vh;" />
+            <button type="button" class="btn btn-outline-danger mt-3" data-bs-dismiss="modal">
+                Close
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+.sidebar {
+  width: 220px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  height: 100vh;
+
+  mat-nav-list a {
+    color: #333;
+    font-weight: 500;
+  }
+
+  .active {
+    color: #1976d2;
+  }
+}
+
+.sidebar-header {
+  height: 63px;
+  background-color: rgb(2, 43, 82);
+
+  p {
+    padding-top: 3px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 2px;
+  }
+}

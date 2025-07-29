@@ -1,0 +1,59 @@
+<!-- Header row: Title + Search bar -->
+<!-- <div
+    class="table-header d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-2 px-3">
+    <h4 class="mb-2 mb-md-0">Session Details</h4>
+
+    <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Search</mat-label>
+        <input matInput [(ngModel)]="searchKey" (keyup)="applyFilter()" placeholder="Search Sessions">
+        <button *ngIf="searchKey" matSuffix mat-icon-button aria-label="Clear" (click)="clearFilter()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div> -->
+<div class="table-header px-2">
+    <h4 class="mb-2 mb-md-0">Session Details</h4>
+
+    <mat-form-field appearance="outline" class="search-field custom-search">
+        <mat-label>Search</mat-label>
+        <input matInput [(ngModel)]="searchKey" (keyup)="applyFilter()" placeholder="Search Sessions">
+        <button *ngIf="searchKey" matSuffix mat-icon-button aria-label="Clear" (click)="clearFilter()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+
+
+<!-- Table -->
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+
+    <!-- Example Columns -->
+    <ng-container matColumnDef="ipAddress">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>IP Address</th>
+        <td mat-cell *matCellDef="let row">{{ row.ipAddress }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="device">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Device</th>
+        <td mat-cell *matCellDef="let row">{{ row.device }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="createdAt">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Created At</th>
+        <td mat-cell *matCellDef="let row">{{ row.createdAt | date: 'medium' }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef>Action</th>
+        <td mat-cell *matCellDef="let row">
+            <button mat-stroked-button color="warn" (click)="logoutSession(row.id)">Logout</button>
+        </td>
+    </ng-container>
+
+    <!-- Table Headers & Rows -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<!-- Paginator -->
+<mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
