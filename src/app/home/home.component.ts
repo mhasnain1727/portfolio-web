@@ -11,8 +11,7 @@ import CLOUDS from 'vanta/dist/vanta.clouds.min';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
-import { ProjectDescriptionDialogComponent } from './project-description-dialog/project-description-dialog.component';
-
+import { ProjectDescriptionDialogComponent } from '../home/project-description-dialog/project-description-dialog.component';
 
 @Component({
   selector: 'app-home',
@@ -111,7 +110,6 @@ export class HomeComponent {
 
   onSubmit() {
     if (this.contactForm.valid) {
-      // console.log('Form Data:', this.contactForm.value);
       alert('Message sent successfully!');
       this.contactForm.reset();
     }
@@ -283,7 +281,7 @@ export class HomeComponent {
     });
     
     setTimeout(() => {
-      window.open('https://drive.google.com/file/d/19ryAXKi_lVbSEuF3RUIfyhYZ20Rydkn6/view?usp=drive_link', '_blank');
+      window.open('https://drive.google.com/file/d/1grH6FK6uV2rLSZDYP10c5t6V1XBqlhXA/view?usp=sharing', '_blank');
     }, 1200);
     
   }
